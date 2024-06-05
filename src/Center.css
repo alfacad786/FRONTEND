@@ -1,0 +1,15 @@
+.Center{
+    
+      /* background-color: rgb(116, 112, 112); */
+       width: 100%;
+       min-width: 320px;
+       height:200px;
+       display: flex;
+       flex-direction: row;
+       /* flex-wrap: wrap; */
+       justify-content: flex-start;
+       align-items: flex-start;  
+       flex-grow: 1;
+      
+     
+   }

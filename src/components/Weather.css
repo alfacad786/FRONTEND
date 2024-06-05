@@ -1,0 +1,151 @@
+.Weather {
+  width: 100%;
+  height: auto;
+  /* background-color: rgba(0, 255, 255, 0.096); */
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #b5cbf5d3;
+}
+.Card1 {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Card2 {
+  width: 100%;
+  /* height: 300px; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-grow: 1;
+}
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+.Card3 {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #4061a0d3;
+}
+.data{
+  width: 100%;
+  /* height: 300px; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-grow: 1;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #7891bed3;
+}
+#card-1-2-3 {
+  margin-bottom: 3px;
+  border-radius: 2px;
+  background-color: #b5cbf5d3;
+
+}
+
+
+.cityname{
+ 
+    width: 100%;
+    height:20px ;
+    margin: 2px;
+    font-size: x-large;
+    color: blue;
+    
+  
+}
+.Card1 form {
+  width: 400px;
+  height: 80px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#searchCity {
+  width: 150px;
+  height: 10px;
+  background-color: #aeb5fab2;
+ 
+}
+.Card1 button {
+  margin: 5px;
+}
+
+h2 {
+  width: 100%;
+  border-bottom: 2px solid rgb(58, 56, 59);
+}
+
+.Home p {
+  color: rgb(196, 243, 255);
+}
+
+.Card2 p {
+  color: rgb(255, 255, 255);
+  margin: 0px;
+  padding: 0px;
+  font-size: small;
+}
+.map {
+  width: 120px;
+  height: 120px;
+  margin: 5px;
+  padding: 2px;
+  background-color: rgba(215, 243, 190, 0.911);
+}
+.Card2 img {
+  height: 120px;
+  margin: 5px;
+  padding: 2px;
+}
+h5{
+  margin: 100px;
+}
+table {
+  padding: 0px;
+  border: 1px solid black;
+  margin: 0px;
+  background-color:  #2e2e7a8a;
+}
+th,
+td {
+ 
+color: aliceblue;
+  width: 60px;
+  height: 2px;
+  padding: 2px;
+  margin: 0px;
+  border: 1px solid black;
+  text-transform: uppercase;
+}
+/* td{
+ 
+} */
+img {
+  height: 85px;
+}
+h3{
+  
+  width: 100%;
+}

@@ -1,0 +1,17 @@
+.CardList {
+  width: 240px;  
+  height:95%; 
+  overflow-y: scroll;
+  overflow-x:hidden;
+  
+  display: flex;
+  
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  
+
+  /* border-radius: 5px; */
+  /* background-color: rgba(13, 56, 56, 0.767); */
+  
+}

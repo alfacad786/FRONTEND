@@ -1,0 +1,10 @@
+.Photo{
+width: 70%;
+height: 70%;
+background-color: darkgrey;
+position:relative;
+align-self: center;
+}
+img{
+      height:100%;   
+}

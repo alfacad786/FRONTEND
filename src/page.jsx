@@ -12,6 +12,8 @@ import Singup from "./components/Singup";
 import Mobile from "./Mobile";
 import Photo from "./components/Photo";
 import Login from "./components/login";
+import Userportal from "./components/userportal";
+
 
 function Page() {
   return (
@@ -28,6 +30,7 @@ function Page() {
         <Route path="/mobile" element={<Mobile />} />
         <Route path="/photo" element={<Photo />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/userportal/:id" element={<Userportal />} />
       </Routes>
     </div>
   );

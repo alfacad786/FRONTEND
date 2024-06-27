@@ -9,6 +9,7 @@ const Login = () => {
     username: "",
     password: "",
   });
+  
   const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({
@@ -19,16 +20,30 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8080/api/login", {
+      const response = await fetch("http://localhost:3000/api/login", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-      navigate("/login");
+      
       const data = await response.json();
-      console.log("data=", data);
+      console.log("data=", data.redirectUrl);
+      const url=data.redirectUrl;
+      const id=data.id;
+
+      console.log(url+id);
+      if (response.ok) {
+        // Redirect to the portal page
+        console.log("url:",url);
+        navigate(url);
+
+      } else {
+        alert(data);
+      }
+      // navigate("/login");
+      // console.log("data=", data);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -40,7 +55,7 @@ const Login = () => {
         <u>Login Form</u>
       </h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username" >Username : </label>
+        <label htmlFor="username">Username : </label>
         <input
           type="text"
           name="username"
@@ -48,7 +63,7 @@ const Login = () => {
           onChange={handleChange}
           placeholder="Username"
         />
-        <label htmlFor="password" >Password : </label>
+        <label htmlFor="password">Password : </label>
         <input
           type="password"
           name="password"

@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 const Singup = () => {
   const [formData, setFormData] = useState({
     username: "",
-    email: "",
     password: "",
+    email: "",
   });
   const navigate = useNavigate();
   const handleChange = (e) => {
@@ -20,23 +20,23 @@ const Singup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8080/api/signup", {
+      const response = await fetch("http://localhost:3000/api/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
+      const data = response.json();
+
       navigate("/login");
-      const data = await response.json();
-      console.log("data=", data);
-    } 
-    catch (error) {
+
+      console.log(data);
+    } catch (error) {
       console.error("Error:", error);
     }
-   
   };
- 
+
   return (
     <form onSubmit={handleSubmit}>
       <input

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./product.css";
 import { colors } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const product = () => {
   const [formData, setFormData] = useState({
@@ -19,22 +20,17 @@ const product = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:3000/api/product", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      const data = response.json();
 
-      navigate("/");
-
-      console.log(data);
-    } catch (error) {
+   axios.post("http://localhost:3000/api/product", formData,)
+      // const data = response.json();
+     .then(response=>{
+      
+      navigate("/")
+      console.log("this is",response.data,"data")
+     
+    }). catch (error=>{
       console.error("Error:", error);
-    }
+    })
   };
 
   return (

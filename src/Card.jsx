@@ -77,14 +77,45 @@ const products = [
 
 
 
-function Card() {
- 
+
+
+function Card  () {
+  let product = async () => {
+    
+    let data =  await fetch ("http://localhost:3000/api/signup")
+    let jsondata = await data.json() ;
+    try {     
+     
+      console.log(jsondata);
+      console.log(jsondata.projectName);
+      console.log(jsondata.discription);
+      console.log(jsondata.image);
+      console.log(jsondata._id);
+   
+       let result = {
+        projectName:jsondata.projectName,  
+        discription:jsondata.discription,
+        image:jsondata.image,
+        id:jsondata._id
+         
+       };
+           return result;
+    
+   } catch (error) {console.log(jsondata.message);
+    let err=jsondata.message
+    return err; 
+    
+   }
+
+  
+  };
+
 const Items = products.map((product) => ( 
     <div className="Card" key={product.id} onClick={()=>goToCardDetail(product.id)}  >
       
-      <img src={product.img} alt="img" /> 
-      <p>{product.title} </p>     
-      <p>{product.name} </p>
+      <img src={product.projectName} alt="img" /> 
+      <p>{product.discription} </p>     
+      <p>{product.image} </p>
       <p>{product.id} </p>
     </div>  
    

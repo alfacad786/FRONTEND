@@ -115,10 +115,11 @@ import axios from "axios";
 
 function Card  () {
 
-  const[products, setProducts]= useState()
+  const[products, setProducts]= useState([]);
   
 useEffect(()=>{
-  axios.get ("http://localhost:3000/api/product/data")
+  axios
+  .get("http://localhost:3000/api/product/data")
   .then(response=>{
     setProducts(response.data);
     console.log(response.data)
@@ -129,20 +130,34 @@ useEffect(()=>{
       });
   },[]);
 
-const Items = products.map((product) => ( 
-    <div className="Card" key={product.id} onClick={()=>goToCardDetail(product.id)}  >
+
+
+
+  const navigate = useNavigate();
+  function goToCardDetail(id) {
+    navigate("/CardDetail", { state: { id, products } });
+  }
+
+
+  // function goToCardDetail(id) {
+  //   navigate("/CardDetail", { state: { id, products } });
+  // }
+
+
+
+
+
+const Items = products.map((products) => ( 
+    <div className="Card" key={products._id} onClick={()=>goToCardDetail(products._id)}  >
       
-      <img src={product.projectName} alt="img" /> 
-      <p>{product.discription} </p>     
-      <p>{product.image} </p>
-      <p>{product.id} </p>
+      <img src={products.projectName} alt="img" /> 
+      <p>{products.discription} </p>     
+      <p>{products.image} </p>
+      <p>{products._id} </p>
     </div>  
    
 ));
-const navigate = useNavigate();
-function goToCardDetail(id,product) {
-  navigate("/CardDetail",{state:{id:_id, product:products}});
-}
+
   return < >{Items }</>;
   
 }

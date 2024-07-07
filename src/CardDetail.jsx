@@ -4,25 +4,30 @@ import "./Page.css";
 
 
 function CardDetail() {
-  const id = useLocation().state.id;
-  const product= useLocation().state.product
+
+  const location = useLocation();
+  const { id, products } = location.state || {};
 
 
-   console.log(id,product);
+  // const id = useLocation().state.id;
+  // const products= useLocation().state.products
 
-  const Items = product.filter((product) => product.id == id);
+
+   console.log(id,products);
+
+  const Items = products.filter((products) => products._id == id);
  
-  console.log(Items[0].name);
+  console.log(Items[0]);
   return (
     <div className="CardDetail">
-      <h4>{Items[0].title}</h4>
+      <h4>{Items[0].projectName}</h4>
       <div className="CardDetail1">
-        <div className="imagdiv"><img src={Items[0].img} alt="img" /></div>
+        <div className="imagdiv"><img src={Items[0].image} alt="img" /></div>
         <div className="Detail">
-          <button >{Items[0].name} </button>
-          <p>Id:{Items[0].id} </p>
-          <p>{Items[0].description} </p>
-          <a href={Items[0].link}>link</a>{" "}
+          <button >{Items[0].projectName} </button>
+          <p>Id:{Items[0]._id} </p>
+          <p>{Items[0].discription} </p>
+          {/* <a href={Items[0].image}>link</a>{" "} */}
         </div>
       </div>
     </div>
@@ -30,3 +35,6 @@ function CardDetail() {
 }
 
 export default CardDetail;
+
+
+

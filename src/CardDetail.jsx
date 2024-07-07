@@ -1,10 +1,11 @@
-import { redirect, useLocation } from "react-router-dom";
+import { redirect, useLocation ,useNavigate} from "react-router-dom";
 import "./Page.css";
+import "./Navbar.css";
 
 
 
 function CardDetail() {
-
+  const navigate = useNavigate();
   const location = useLocation();
   const { id, products } = location.state || {};
 
@@ -18,6 +19,14 @@ function CardDetail() {
   const Items = products.filter((products) => products._id == id);
  
   console.log(Items[0]);
+
+  function onClick (id) {
+    navigate("/", { state: { id } });
+  }
+
+
+
+
   return (
     <div className="CardDetail">
       <h4>{Items[0].projectName}</h4>
@@ -30,6 +39,7 @@ function CardDetail() {
           {/* <a href={Items[0].image}>link</a>{" "} */}
         </div>
       </div>
+      <button onClick={()=>onClick(products._id)} >BACK</button>
     </div>
   );
 }

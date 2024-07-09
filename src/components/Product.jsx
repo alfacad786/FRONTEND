@@ -5,21 +5,51 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const product = () => {
+
   const [formData, setFormData] = useState({
     projectName: "",
     discription: "",
     image: "",
   });
+  // const [image, setImage] = useState(null);
+
   const navigate = useNavigate();
+
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
+// ------------------image-------------
+//   const handleImageChange = (e) => {
+//     setImage(e.target.files[0]);
+// };
+// ------------------image-------------
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+// ------------------image-------------
+
+    // const formData = new FormData();
+    // formData.append('image', image);
+// ------------------image-------------
+// try {
+//   const res = await axios.post('/upload', formData, {
+
+//       headers: {
+//           'Content-Type': 'multipart/form-data'
+//       }
+//   });
+
+//   console.log(res.data);
+// } catch (err) {
+//   console.error(err);
+// }
+// ------------------image-------------
 
    axios.post("http://localhost:3000/api/product", formData,)
       // const data = response.json();
@@ -49,10 +79,22 @@ const product = () => {
         onChange={handleChange}
         placeholder="discription"
       />
+
+
+  
+   
+
+       {/* ------------------image------------- */}
+       {/* <input type="file" onChange={handleImageChange} placeholder="image" /> */}
+       {/* ------------------image------------- */}
+
+
+
+
       <input
-        type="text"
+        type="file"
         name="image"
-        value={formData.image}
+       
         onChange={handleChange}
         placeholder="image"
       />

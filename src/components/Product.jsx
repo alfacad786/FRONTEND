@@ -5,25 +5,12 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const product = () => {
+  const navigate = useNavigate();
+  // ------------------s3 create bucket-------------
   const [formData1, setFormData1] = useState({
     bucketName: "",
   });
-  // const [formData, setFormData] = useState({
-  //   projectName: "",
-  //   discription: "",
-  //   image: "",
-  // });
-  // const [image, setImage] = useState(null);
 
-  // const navigate = useNavigate();
-
-  // const handleChange = (e) => {
-  //   setFormData({
-  //     ...formData,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
-  // ------------------s3-------------
   const handleChange1 = (e) => {
     setFormData1({
       ...formData1,
@@ -34,7 +21,10 @@ const product = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:3000/api/creatBacket/",formData1);
+      const res = await axios.post(
+        "http://localhost:3000/api/creatBacket/",
+        formData1
+      );
       const data = res.json();
       (response) => {
         console.log("this is", response.data, "data");
@@ -44,53 +34,33 @@ const product = () => {
     }
   };
 
-  // ------------------image-------------
+  // ------------------s3 insert data in bucket-------------
+  const [formData, setFormData] = useState({
+    projectName: "",
+    discription: "",
+    image: "",
+  });
 
-  // axios
-  //   .post("http://localhost:3000/api/product", formData)
-  //   // const data = response.json();
-  //   .then((response) => {
-  //     navigate("/");
-  //     console.log("this is", response.data, "data");
-  //   })
-  //   .catch((error) => {
-  //     console.error("Error:", error);
-  //   });
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  // ------------------image-------------
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   // ------------------image-------------
-
-  //   const formData = new FormData();
-  //   formData.append("image", image);
-  //   // ------------------image-------------
-  //   try {
-  //     const res = await axios.post("/upload", formData, {
-  //       headers: {
-  //         "Content-Type": "multipart/form-data",
-  //       },
-  //     });
-
-  //     console.log(res.data, "data not found");
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  //   // ------------------image-------------
-
-  //   // axios
-  //   //   .post("http://localhost:3000/api/product", formData)
-  //   //   // const data = response.json();
-  //   //   .then((response) => {
-  //   //     navigate("/");
-  //   //     console.log("this is", response.data, "data");
-  //   //   })
-  //   //   .catch((error) => {
-  //   //     console.error("Error:", error);
-  //   //   });
-  // };
-
+    axios
+      .post("http://localhost:3000/api/UPDATE", formData)
+      // const data = response.json();
+      .then((response) => {
+        navigate("/");
+        console.log("this is", response.data, "data");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
   return (
     <>
       <form onSubmit={handleSubmit1}>
@@ -104,35 +74,31 @@ const product = () => {
         <button type="submit">ADD bucket</button>
       </form>
 
-      {/* <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
-        type="text"
-        name="projectName"
-        value={formData.projectName}
-        onChange={handleChange}
-        placeholder="projectName"
-      />
+          type="text"
+          name="projectName"
+          value={formData.projectName}
+          onChange={handleChange}
+          placeholder="projectName"
+        />
         <input
-        type="text"
-        name="discription"
-        value={formData.discription}
-        onChange={handleChange}
-        placeholder="discription"
-      />
-
-        ------------------image-------------
-        <input type="file" onChange={handleImageChange} placeholder="image" />
-        ------------------image-------------
+          type="text"
+          name="discription"
+          value={formData.discription}
+          onChange={handleChange}
+          placeholder="discription"
+        />
 
         <input
-        type="file"
-        name="image"
-        value={formData.image}
-        onChange={handleImageChange}
-        placeholder="image"
-      />
+          type="file"
+          name="image"
+          value={formData.image}
+          onChange={handleChange}
+          placeholder="image"
+        />
         <button type="submit">ADD PRODUCT</button>
-      </form> */}
+      </form>
     </>
   );
 };

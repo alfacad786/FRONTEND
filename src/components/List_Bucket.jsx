@@ -24,6 +24,8 @@ const List_Bucket = () => {
   }, []);
   console.log("ye", products, "hai");
   const Items = (
+    <>
+    <p>bucket name:</p>
     <select name="search" className="select">
       <option value="select">select</option>
       
@@ -33,6 +35,7 @@ const List_Bucket = () => {
         {/* {Buckets.map((b) => ` • ${b.Name}`).join("\n")} */}
      
     </select>
+    </>
   );
 
   return Items;

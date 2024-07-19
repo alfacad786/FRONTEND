@@ -122,7 +122,7 @@ useEffect(()=>{
   .get("http://localhost:3000/api/product/data")
   .then(response=>{
     setProducts(response.data);
-    console.log("this:",response.data,"from card")
+    // console.log("this:",response.data,"from card")
   })
     .catch(
       error=>{

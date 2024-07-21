@@ -4,6 +4,7 @@ import Add_Object from "./Add_Object";
 import CreatBucket from "./createBacket";
 import List_Bucket from "./List_Bucket";
 import List_Object from "./List_object";
+import Object from "./object";
 
 const product = () => {
   return (
@@ -12,7 +13,7 @@ const product = () => {
       <Add_Object />
       <List_Bucket />
       <List_Object />
-
+      <Object />
     </div>
   );
 };

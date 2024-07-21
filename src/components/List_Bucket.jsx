@@ -13,7 +13,7 @@ const List_Bucket = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/ListObject/")
+      .get("http://localhost:3000/api/ListBuckets/")
       .then((response) => {
         setProducts(response.data);
         // console.log("this:", response.data, "from card");

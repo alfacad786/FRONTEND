@@ -8,62 +8,131 @@ const List_Object = () => {
   const navigate = useNavigate();
 
   // ------------------s3 list  bucket-------------
-  const [products, setProducts] = useState([]);
+  const [buckets, setbuckets] = useState([]);
+
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/ListObject/")
+      .get("http://localhost:3000/api/ListBuckets/")
       .then((response) => {
-        setProducts(response.data);
-        // console.log("this:", response.data, "from bucket list");
+        setbuckets(response.data);
+        // console.log("this:", response.data, "from card");
       })
       .catch((error) => {
         console.log("thar was an error fetching the data", error);
       });
   }, []);
 
-  // ------------------s3 list  object-------------
   const [formData, setFormData] = useState({
-    
+    bucketName: "",
+    objectKey: "",
   });
+  const [Object, setObjects] = useState([]);
+  // console.log("object:", Object);
+  // Handle changes to the select element
 
+  // ------------------handleChange-------------
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
+    const { name, value } = e.target;
+    setFormData((prevFormData) => {
+      const newFormData = { ...prevFormData, [name]: value };
+      // console.log("Updated formData:", newFormData);
+      // console.log("value:",value.key);
+      return newFormData;
+      
     });
-    console.log("aa", formData, "chhe");
+
+    if (name === "bucketName" && value) {
+      axios
+        .get("http://localhost:3000/api/ListObject/", { params:{bucketName: value} })
+        .then((response) => {
+          setObjects(response.data);
+          console.log("bucket list:", response.data,);
+        })
+        .catch((error) => {
+          console.log("thar was an error fetching the data", error,"os");
+        });
+        
+    }
+    
   };
 
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevFormData) => {
+  //     const newFormData = { ...prevFormData, [name]: value };
+  //     console.log("Updated formData:", newFormData);
+  //     return newFormData;
+  //   });
+
+  //   // If bucket name is changed, fetch the objects from the selected bucket
+  //   if (name === "bucketName" && value) {
+  //     axios
+  //       .get("http://localhost:3000/api/ListObjects", { params: { bucketName: value } })
+  //       .then((response) => {
+  //         setObjects(response.data);
+  //       })
+  //       .catch((error) => {
+  //         console.log("There was an error fetching the objects", error);
+  //       });
+  //   }
+  // };
+
+  // ------------------handleSubmit-------------
+  const [Data, setData] = useState([]);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     axios
-      .get("http://localhost:3000/api/READ/", formData)
+      .get("http://localhost:3000/api/Read/", { params: formData })
+
       // const data = response.json();
       .then((response) => {
-        // navigate("/");
         console.log("this is", response.data, "data");
+        
+        setData(response.data);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
+    console.log("formData:", formData);
+    navigate("/Product");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form">
+    <>
       <div className="search">
-        BUCKET NAME:
-        <select name="bucketName" onChange={handleChange}>
-          <option >select</option>
-          {products.map((p) => (
-            <option  value={p.Name} key={p.CreationDate}>{p.Name}</option>
-          ))}
-
-          {/* {Buckets.map((b) => ` • ${b.Name}`).join("\n")} */}
-        </select>
+        <h3>List_Object</h3>
+        <form onSubmit={handleSubmit} className="form">
+          BUCKET NAME:
+          <select
+            name="bucketName"
+            value={formData}
+            onChange={handleChange}
+          >
+            <option value="">select</option>,
+            {buckets.map((B) => (
+              <option value={B.Name} key={B.CreationDate}>
+                {B.Name}
+              </option>
+            ))}
+          </select>
+          <select
+            name="objectKey"
+            value={formData.objectKey}
+            onChange={handleChange}
+          >
+            <option value="">select</option>,
+            {Object.map((obj, index) => (
+              <option value={obj} key={index}>
+                {obj}
+              </option>
+            ))}
+          </select>
+          <button type="submit">list object</button>
+        </form>
       </div>
-      <button type="submit">list object</button>
-    </form>
+    </>
   );
 };
 

@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-
 // const products = [
 //   {
 //     img: "./MAYURI1.jpg",
@@ -76,90 +75,135 @@ import axios from "axios";
 //   }
 // ];
 
-
-
-
-
 // let product = async () => {
-    
+
 //   let data =  await fetch ("http://localhost:3000/api/product")
 //   let jsondata = await data.json() ;
-//   try {     
-   
+//   try {
+
 //     console.log(jsondata);
 //     console.log(jsondata.projectName);
 //     console.log(jsondata.discription);
 //     console.log(jsondata.image);
 //     console.log(jsondata._id);
- 
+
 //      let result = {
-//       projectName:jsondata.projectName,  
+//       projectName:jsondata.projectName,
 //       discription:jsondata.discription,
 //       image:jsondata.image,
 //       id:jsondata._id
-       
+
 //      };
 //          return result;
-  
+
 //  } catch (error) {console.log(jsondata.message);
 //   let err=jsondata.message
-//   return err; 
-  
-//  }
+//   return err;
 
+//  }
 
 // };
 
-
-
-
-function Card  () {
-
-  const[products, setProducts]= useState([]);
-  
-useEffect(()=>{
-  axios
-  .get("http://localhost:3000/api/product/data")
-  .then(response=>{
-    setProducts(response.data);
-    // console.log("this:",response.data,"from card")
-  })
-    .catch(
-      error=>{
-        console.log('thar was an error fetching the data',error)
-      });
-  },[]);
-
-
-
-
+function Card() {
+  const [bucket, setbuckets] = useState("aaliya-1721126150278");
+  const [clickedKey, setClickedKey] = useState(null);
+  const [Data, setData] = useState([]);
+  const [Object, setObjects] = useState([]);
   const navigate = useNavigate();
-  function goToCardDetail(id) {
-    navigate("/CardDetail", { state: { id, products } });
-  }
+
+  // ------------------list from aws s3 bucket-------------
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/api/ListObject/", {
+        params: { bucketName: bucket },
+      })
+      .then((response) => {
+        setObjects(response.data);
+        // console.log("bucket list:", response.data);
+      })
+      .catch((error) => {
+        console.log("thar was an error fetching the data", error, "os");
+      });
+  }, []);
+
+  // ------------------read object from aws s3 bucket-------------
+
+  const goToCardDetail = (key, Object) => {
+    setClickedKey(key);
+    axios
+      .get("http://localhost:3000/api/Read/", {
+        params: { bucketName: bucket, objectKey: key },
+      })
+      // const data = response.json();
+      .then((response) => {
+        setData(response.data);
+        console.log("THIS", response.data, "data");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+    // console.log("formData:", formData);
+    console.log("onClick key:", key, "/n", "onClick Data:", Data);
+  };
 
 
-  // function goToCardDetail(id) {
-  //   navigate("/CardDetail", { state: { id, products } });
-  // }
+  console.log("dATA*:", Data, "***"); //
+  console.log("dATA##:", Data, "###");
 
-
-
-
-
-const Items = products.map((products) => ( 
-    <div className="Card" key={products._id} onClick={()=>goToCardDetail(products._id)}  >
-      
-      <img src={products.projectName} alt="img" /> 
-      <p>{products.discription} </p>     
-      <p>{products.image} </p>
-      <p>{products._id} </p>
-    </div>  
-   
-));
-
-  return < >{Items }</>;
   
+  useEffect(() => {
+    if (Data && clickedKey) {
+      navigate("/CardDetail", { state: Data });
+      console.log("Navigating to CardDetail with data:", Data);
+    }
+  }, [Data, clickedKey]);
+
+
+
+
+
+
+  // const Items = products.map((products) => (
+  //     <div className="Card" key={products._id} onClick={()=>goToCardDetail(products._id)}  >
+
+  //       <img src={products.projectName} alt="img" />
+  //       <p>{products.discription} </p>
+  //       <p>{products.image} </p>
+  //       <p>{products._id} </p>
+  //     </div>
+
+  // ));
+
+  const car = Object.map((Object) => (
+    <div className="Card" key={Object} onClick={() => goToCardDetail(Object)}>
+      <p style={{ color: "white" }}>{Object} </p>
+    </div>
+  ));
+
+  // return < >{Items }</>;
+  return <>{car}</>;
 }
 
 export default Card;
+
+// setProducts(toString("aaliya-1721126150278"));
+
+// ------------------list from mongodb bucket-------------
+//   const[products, setProducts]= useState([]);
+
+// useEffect(()=>{
+//   axios
+//   .get("http://localhost:3000/api/product/data")
+//   .then(response=>{
+//     setProducts(response.data);
+//     // console.log("this:",response.data,"from card")
+//   })
+//     .catch(
+//       error=>{
+//         console.log('thar was an error fetching the data',error)
+//       });
+//   },[]);
+
+//   console.log('thar was a ',products,'from mongodb');
+// console.log("thar was an ", bucket, "bucket name");

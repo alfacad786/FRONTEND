@@ -13,7 +13,7 @@ const product = () => {
       <Add_Object />
       <List_Bucket />
       <List_Object />
-      <Object />
+      {/* <Object /> */}
     </div>
   );
 };

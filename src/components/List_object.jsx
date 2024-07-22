@@ -38,24 +38,22 @@ const List_Object = () => {
       // console.log("Updated formData:", newFormData);
       // console.log("value:",value.key);
       return newFormData;
-      
     });
 
     if (name === "bucketName" && value) {
       axios
-        .get("http://localhost:3000/api/ListObject/", { params:{bucketName: value} })
+        .get("http://localhost:3000/api/ListObject/", {
+          params: { bucketName: value },
+        })
         .then((response) => {
           setObjects(response.data);
-          console.log("bucket list:", response.data,);
+          console.log("bucket list:", response.data);
         })
         .catch((error) => {
-          console.log("thar was an error fetching the data", error,"os");
+          console.log("thar was an error fetching the data", error, "os");
         });
-        
     }
-    
   };
-
 
   // const handleChange = (e) => {
   //   const { name, value } = e.target;
@@ -88,14 +86,15 @@ const List_Object = () => {
 
       // const data = response.json();
       .then((response) => {
-        console.log("this is", response.data, "data");
-        
+        // console.log("this is", response, "data");
+
         setData(response.data);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
-    console.log("formData:", formData);
+    // console.log("formData:", formData);
+    // console.log("dATA*:",Data,"***");
     navigate("/Product");
   };
 
@@ -105,11 +104,7 @@ const List_Object = () => {
         <h3>List_Object</h3>
         <form onSubmit={handleSubmit} className="form">
           BUCKET NAME:
-          <select
-            name="bucketName"
-            value={formData}
-            onChange={handleChange}
-          >
+          <select name="bucketName" value={formData.bucketName} onChange={handleChange}>
             <option value="">select</option>,
             {buckets.map((B) => (
               <option value={B.Name} key={B.CreationDate}>
@@ -131,6 +126,10 @@ const List_Object = () => {
           </select>
           <button type="submit">list object</button>
         </form>
+        <h4>OBJECT DATA</h4>
+        <p> {Data.projectName} </p>
+        <p> {Data.discription} </p>
+        <p> {Data.image} </p>
       </div>
     </>
   );

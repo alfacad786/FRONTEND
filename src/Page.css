@@ -2,7 +2,7 @@
   width: 700px;
   height: 100%;
   display: flex;
- flex-wrap: wrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   flex-grow: 1;
@@ -10,7 +10,6 @@
   /* overflow-y: scroll; */
 }
 .CardDetail {
- 
   width: 100%;
   min-width: 320px;
   height: auto;
@@ -18,7 +17,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+  background-color: rgb(50, 173, 173);
   border-radius: 5px;
 }
 h4 {
@@ -30,14 +29,13 @@ h4 {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   color: rgba(19, 20, 22, 0.959);
-  
 }
 .CardDetail1 {
   width: 100%;
   height: auto;
   padding: 5px;
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   /* background-color: rgb(177, 31, 31); */
@@ -45,18 +43,16 @@ h4 {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.imagdiv{
-   /* background-color: rgb(177, 31, 31); */
+.imagdiv {
+  /* background-color: rgb(177, 31, 31); */
   width: 260px;
   height: 200px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
- margin-top: 10px;
-
+  margin-top: 10px;
 }
 .CardDetail img {
-  
   height: 80%;
   border: 2px solid rgb(77, 76, 76);
   border-radius: 5px;
@@ -71,17 +67,17 @@ h4 {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color:  #161d5a7c;
+  background-color: #161d5a7c;
   border-radius: 5px;
   text-transform: uppercase;
   color: rgba(238, 244, 255, 0.959);
   flex-grow: 1;
 }
-.Detail button{
+.Detail button {
   border-radius: 5px;
   background-color: #1b2ed8;
   margin: 10px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: medium;
 }

@@ -106,7 +106,7 @@ import axios from "axios";
 
 function Card() {
   const [bucket, setbuckets] = useState("aaliya-1721126150278");
-  const [clickedKey, setClickedKey] = useState(null);
+  const [id, setid] = useState(null);
   const [Data, setData] = useState([]);
   const [Object, setObjects] = useState([]);
   const navigate = useNavigate();
@@ -130,7 +130,7 @@ function Card() {
   // ------------------read object from aws s3 bucket-------------
 
   const goToCardDetail = (key, Object) => {
-    setClickedKey(key);
+    setid(key);
     axios
       .get("http://localhost:3000/api/Read/", {
         params: { bucketName: bucket, objectKey: key },
@@ -153,11 +153,11 @@ function Card() {
 
   
   useEffect(() => {
-    if (Data && clickedKey) {
-      navigate("/CardDetail", { state: Data });
-      console.log("Navigating to CardDetail with data:", Data);
+    if (Data && id) {
+      navigate("/CardDetail", { state: {Data, id} });
+      console.log("Navigating to CardDetail with data:", Data ,"clickedKey:",id);
     }
-  }, [Data, clickedKey]);
+  }, [Data, id]);
 
 
 

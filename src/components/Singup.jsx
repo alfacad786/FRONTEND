@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./Singup.css";
 import { colors } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
+import Add_User from "./Add_User";
+import CreatBucket from "./createBacket";
 const Singup = () => {
   const [formData, setFormData] = useState({
     username: "",
@@ -38,31 +39,34 @@ const Singup = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="username"
-        value={formData.username}
-        onChange={handleChange}
-        placeholder="Username"
-      />
-      <input
-        type="email"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-        placeholder="Email"
-      />
-      <input
-        type="password"
-        name="password"
-        value={formData.password}
-        onChange={handleChange}
-        placeholder="Password"
-      />
-      <button type="submit">Sign Up</button>
-    </form>
-
+    // <form onSubmit={handleSubmit}>
+    //   <input
+    //     type="text"
+    //     name="username"
+    //     value={formData.username}
+    //     onChange={handleChange}
+    //     placeholder="Username"
+    //   />
+    //   <input
+    //     type="email"
+    //     name="email"
+    //     value={formData.email}
+    //     onChange={handleChange}
+    //     placeholder="Email"
+    //   />
+    //   <input
+    //     type="password"
+    //     name="password"
+    //     value={formData.password}
+    //     onChange={handleChange}
+    //     placeholder="Password"
+    //   />
+    //   <button type="submit">Sign Up</button>
+    // </form>
+    <>
+      <CreatBucket />
+      <Add_User />
+    </>
     //   <div className="newaddform">
     //   <form  method="post" action="http://localhost:8080/api/signup/" className="signupform">
     //     <div className="subdiv">

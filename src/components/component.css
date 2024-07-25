@@ -14,12 +14,12 @@
   color: #201a1a;
   padding: 10px;
 }
-/* .component {
+.component {
   width: 80%;
   height: auto;
   background-color: rgb(240, 240, 240);
   background-color: rgb(194, 178, 175);
-  background-image: url("../../public/regiFormBgImage-2.jpg");
+  background-image: url("/regiFormBgImage-2.jpg");
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,7 +29,18 @@
   position: relative;
   align-self: center;
   margin: 5px;
-} */
+  padding: 20px;
+}
+.component div { 
+ 
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  margin: 5px;  
+  }
+  .component div label {     
+    margin-right: 15px; 
+    }
 .form {
   width: 80%;
   height: auto; 
@@ -44,6 +55,7 @@
   position: relative; 
   margin: 15px;
   padding: 15px;
+
 }
 .search {
   width: 30%;

@@ -37,6 +37,9 @@ const Add_Image = () => {
     // setFormData({ [e.target.name]: file.name });
     formData.set("image", file);
   };
+  const handleChange = (e) => {
+    formData.set(e.target.name, e.target.value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -61,11 +64,33 @@ const Add_Image = () => {
   return (
     <div className="component">
       <form onSubmit={handleSubmit} className="form">
+      
         <div>
-          <label htmlFor="image">password :</label>
+          <label htmlFor="image">Image :</label>
           <input name="image" type="file" id="image" onChange={handleUpload} className="inp" />
 
           {error && <Text color="red.500">{error}</Text>}
+        </div>
+
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input name="username" type="text" id="username" onChange={handleChange} className="inp" />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input name="password" type="password" id="password" onChange={handleChange} className="inp" />
+        </div>
+        <div>
+          <label htmlFor="name">Name:</label>
+          <input name="name" type="text" id="name" onChange={handleChange} className="inp" />
+        </div>
+        <div>
+          <label htmlFor="address">Address:</label>
+          <input name="address" type="text" id="address" onChange={handleChange} className="inp" />
+        </div>
+        <div>
+          <label htmlFor="mobileno">Mobile No:</label>
+          <input name="mobileno" type="text" id="mobileno" onChange={handleChange} className="inp" />
         </div>
 
         <button type="submit">submit</button>

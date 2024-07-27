@@ -16,7 +16,7 @@
       rgba(5, 8, 31, 0.863)
     ),
     url("/bgimage.jpg");
-    background-size: 100vw;
+    background-size: 100%;
     background-position-x: center;
     background-position-y: center;
     

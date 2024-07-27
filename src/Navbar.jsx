@@ -28,7 +28,21 @@ function Nabar() {
   function goTologinup() {
     navigate("/login");
   }
-
+  function goTocreatbucket() {
+    navigate("/CreatBucket");
+  }
+  function goToAdd_Product() {
+    navigate("/Add_Product");
+  }
+  function goToAdd_Object() {
+    navigate("/Add_Object");
+  }
+  function goToAdd_User() {
+    navigate("/Add_User");
+  }
+  function goToMUI() {
+    navigate("/MUI");
+  }
 
   return (
     <div className="navbar">
@@ -40,6 +54,11 @@ function Nabar() {
       <button onClick={goToWeather}>Weather</button>
       <button onClick={goTosingup}>singup</button>
       <button onClick={goTologinup}>loginup</button>
+      <button onClick={goTocreatbucket}>CreatBucket</button>
+      <button onClick={goToAdd_Product}>Add_Product</button>
+      <button onClick={goToAdd_Object}>Add_Object</button>
+      <button onClick={goToAdd_User}>Add_User</button>
+      <button onClick={goToMUI}>MUI</button>
     </div>
   );
 }

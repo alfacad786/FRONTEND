@@ -136,20 +136,20 @@ function Card() {
         params: { bucketName: bucket, objectKey: key },
       })
       // const data = response.json();
-      .then((response) => {
-        setData(response.data);
-        console.log("THIS", response.data, "data");
+      .then((response) => { 
+        setData(response.data.data);
+        console.log("THIS", response.data.data, "data");
       })
       .catch((error) => {
         console.error("Error:", error);
       });
     // console.log("formData:", formData);
-    console.log("onClick key:", key, "/n", "onClick Data:", Data);
+    // console.log("onClick key:", key, "/n", "onClick Data:", Data);
   };
 
 
-  console.log("dATA*:", Data, "***"); //
-  console.log("dATA##:", Data, "###");
+  // console.log("dATA*:", Data, "***"); //
+  // console.log("dATA##:", Data, "###");
 
   
   useEffect(() => {

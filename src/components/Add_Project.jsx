@@ -1,75 +1,3 @@
-// import React, { useState } from "react";
-// import "./component.css";
-// import { colors } from "@mui/material";
-// import { useNavigate } from "react-router-dom";
-// import axios from "axios";
-
-// const Add_Object = () => {
-//   const navigate = useNavigate();
-
-//   // ------------------s3 insert data in bucket-------------
-//   const [formData, setFormData] = useState({
-//     projectName: "",
-//     discription: "",
-//     image: "",
-//   });
-  
-
-//   const handleChange = (e) => {
-//     setFormData({
-//       ...formData,
-//       [e.target.name]: e.target.value,
-//     });
-//   };
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     axios
-//       .post("http://localhost:3000/api/UPDATE", formData)
-//       // const data = response.json();
-//       .then((response) => {
-//         navigate("/");
-//         console.log("this is", response.data, "data");
-//       })
-//       .catch((error) => {
-//         console.error("Error:", error);
-//       });
-//   };
-//   return (
-//     <div className="component">
-   
-//     <form onSubmit={handleSubmit} className="form">
-   
-//       <input
-//         type="text"
-//         name="projectName"
-//         value={formData.projectName}
-//         onChange={handleChange}
-//         placeholder="projectName"
-//       />
-//       <input
-//         type="text"
-//         name="discription"
-//         value={formData.discription}
-//         onChange={handleChange}
-//         placeholder="discription"
-//       />
-
-//       <input
-//         type="file"
-//         name="image"
-//         value={formData.image}
-//         onChange={handleChange}
-//         placeholder="image"
-//       />
-//       <button type="submit">ADD Object</button>
-//     </form>
-//     </div>
-//   );
-// };
-
-// export default Add_Object;
-// ===========================================================================
 import React, { useState } from "react";
 import "./component.css";
 import { colors } from "@mui/material";
@@ -117,7 +45,7 @@ const Add_Product = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/api/UPDATE", formData, {
+      .post("http://localhost:3000/api/newUser/", formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -145,14 +73,14 @@ const Add_Product = () => {
         </div>
 
         <div>
-          <label htmlFor="projectName">projectName:</label>
-          <input name="projectName" type="text" id="projectName" onChange={handleChange} className="inp" />
+          <label htmlFor="username">Username:</label>
+          <input name="username" type="text" id="username" onChange={handleChange} className="inp" />
         </div>
         <div>
-          <label htmlFor="discription">discription:</label>
-          <input name="discription" type="text" id="discription" onChange={handleChange} className="inp" />
+          <label htmlFor="password">Password:</label>
+          <input name="password" type="password" id="password" onChange={handleChange} className="inp" />
         </div>
-        {/* <div>
+        <div>
           <label htmlFor="name">Name:</label>
           <input name="name" type="text" id="name" onChange={handleChange} className="inp" />
         </div>
@@ -163,7 +91,7 @@ const Add_Product = () => {
         <div>
           <label htmlFor="mobileno">Mobile No:</label>
           <input name="mobileno" type="text" id="mobileno" onChange={handleChange} className="inp" />
-        </div> */}
+        </div>
 
         <button type="submit">submit</button>
       </form>
@@ -172,4 +100,3 @@ const Add_Product = () => {
 };
 
 export default Add_Product;
-

@@ -4,7 +4,7 @@ import "./Navbar.css";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function Nabar() {
+function Bottom() {
   const navigate = useNavigate();
   function goToHome() {
     navigate("/");
@@ -37,4 +37,4 @@ function Nabar() {
     </div>
   );
 }
-export default Nabar;
+export default Bottom;

@@ -11,11 +11,11 @@ function App() {
   return (
     <>
       <div className="main">
-        <Top />
+        <Top/>
+        <Nabar />
+        <CardList />
         <div className="Center">
-          <Nabar />
           <Page />
-          <CardList />
         </div>
         <Bottom />
       </div>

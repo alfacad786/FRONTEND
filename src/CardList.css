@@ -1,12 +1,12 @@
 .CardList {
-  width: 240px;  
+  width: 100VW; 
   height:95%; 
-  overflow-y: scroll;
-  overflow-x:hidden;
-  
+  overflow-X: scroll;
+  overflow-Y:hidden;
+  overflow-X:hidden;
   display: flex;
   
-  flex-direction: column;
+  flex-direction:row;
   justify-content: flex-start;
   align-items: flex-start;
   

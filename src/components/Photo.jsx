@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./Photo.css";
+import "../css/Photo.css";
 import React from 'react';
 
 
@@ -14,11 +14,13 @@ const Photo = () => {
     }
 
 
-  return (
-    <div className="Photo">
-      <img src="./MAYURI1.jpg" alt="img"/>
-      <button onClick={goToHome}>Back</button>
+  return (<>
+    <div id="Photo">
+      <img id="img" src="./MAYURI1.jpg" alt="img"/>
+    
     </div>
+      <button onClick={goToHome}>Back</button>
+      </>
   )
 }
 

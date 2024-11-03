@@ -1,7 +1,7 @@
 .Center{
     
-      /* background-color: rgb(116, 112, 112); */
-       width: 100%;
+
+       width: 100vw;
        min-width: 320px;
        height:200px;
        display: flex;

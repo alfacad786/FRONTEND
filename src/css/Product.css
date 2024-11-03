@@ -1,7 +1,8 @@
 .product {
   width: 100%;
   height: auto;
-  background-color: rgb(39, 64, 255);
+  background-color:#45505c;
+ 
   /* background-color: rgb(241, 232, 230); */
   display: flex;
   flex-direction: column;

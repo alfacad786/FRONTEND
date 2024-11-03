@@ -1,14 +1,14 @@
-import "./Page.css";
+import "../src/css/Page.css";
 // import "./CardList.css";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Home from "./components/Home";
 import Aboute from "./components/Aboute";
 import Contect from "./components/Contect";
-import Product from "./components/Product";
+import Product from "./components/Bucket";
 import CardDetail from "./CardDetail";
 import Weather from "./components/Weather";
 import Newpage from "./components/newPage";
-import Singup from "./components/Singup";
+
 import Mobile from "./Mobile";
 import Photo from "./components/Photo";
 import Login from "./components/login";
@@ -20,13 +20,14 @@ import CreatBucket from "./components/createBacket";
 import InputAdornments from "./components/MUI";
 import SignIn from "./components/log";
 import SignUp from "./components/sign";
+import Quntitycal from "./components/Quntity";
 
 
 function Page() {
   return (
-    <div className="Page">
+    // <div className="Page">
       <Routes>
-        <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home />} />
         <Route path="/Aboute" element={<Aboute />} />
         <Route path="/Contect" element={<Contect />} />
         <Route path="/Product" element={<Product />} />
@@ -43,8 +44,9 @@ function Page() {
         <Route path="/Add_Product" element={<Add_Product />} />
         <Route path="/CreatBucket" element={<CreatBucket />} />
         <Route path="/MUI" element={<InputAdornments />} />
+        <Route path="/QUNTITY" element={<Quntitycal />} />
       </Routes>
-    </div>
+    // </div>
   );
 }
 export default Page;

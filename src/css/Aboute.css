@@ -1,0 +1,150 @@
+#Aboute {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items:flex-start;
+  background-color: rgb(228, 228, 228);
+  background-image: url("/public/bgimage.jpg");
+  padding: 2px;
+  /* margin: 25px; */
+  /* border-radius: 5px; */
+  z-index: 1;
+}
+
+
+.Home button {
+  width: auto;
+  height: auto;
+  background-color: rgb(223, 24, 24);
+}
+#Home{
+  margin: 12px;
+font-size: .8em;
+}
+
+
+
+#card1{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(235, 235, 235);
+  border-radius: 10px;
+  box-shadow: 1px 2px 5px rgb(129, 129, 129);
+  text-align: justify;
+  margin: 10px;
+  
+}
+/* #HomeBody{
+  width: 50vw;
+  height: 550px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #1976d2;
+  border-radius: 5px;
+  line-height: 25px;
+  flex-grow: 1;
+  margin-top: 5px;
+  padding: 8px;
+
+} */
+
+.gujarati{
+  font-family: 'Trilo', sans-serif;
+}
+
+ #cardabout{
+ 
+  display: flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-content: flex-start;
+  width: 100%;
+  /* padding: 20px; */
+  /* background-color: rgb(223, 24, 24); */
+  border-radius: 10px;
+  line-height: 25px;
+  flex-grow: 1;
+  margin: 5px;
+  
+ 
+ }
+ #cardabout h1{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: #115fac;
+  padding: 3px;
+  color: #ffffff
+}
+#contect {
+  width: 100%;
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  
+  /* padding: 10px; */
+  /* background-color: rgb(223, 24, 24); */
+  border-radius: 5px;
+
+  font-size: larger
+ 
+}
+#c1{
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #d0e7ff4b;
+  border-radius: 7px;
+  box-shadow: 1px 2px 5px rgb(129, 129, 129);
+  text-align: justify;
+  margin: 6px;
+  padding: 5px;
+  line-height: 48px;
+  
+}
+#c2{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #d0e7ff4b;
+  border-radius: 7px;
+  box-shadow: 1px 2px 5px rgb(129, 129, 129);
+  text-align: justify;
+  margin: 10px;
+  padding: 5px;
+  line-height: 18px;
+  
+}
+#cardabout  h4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:  #ffffff;  
+  background-color: #1976d2;
+  position:relative;
+  top: 0;
+}
+
+#cardabout h6{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100%;
+  text-align: center;
+  background-color: #1976d2;
+  padding: 3px;
+  color: #ffffff;
+ 
+}

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import "./component.css";
+import "../css/component.css";
 import { colors } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./login.css";
+import "../css/login.css";
+import Top from "../Top.jsx";
+import Nabar from "../Navbar.jsx";
+
 
 const CreatBucket = () => {
   const navigate = useNavigate();
@@ -38,6 +41,9 @@ const CreatBucket = () => {
   };
 
   return (
+    <>
+    <Top />
+    <Nabar />
     <div className="component">
       <form onSubmit={handleSubmit1} className="form">
         <input
@@ -50,6 +56,7 @@ const CreatBucket = () => {
         <button type="submit">ADD bucket</button>
       </form>
     </div>
+    </>
   );
 };
 

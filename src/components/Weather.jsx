@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import "./Weather.css";
+import "../css/Weather.css";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import WeatherSearch from "./weathersearch";
 import WeatherData from "./watherdata";
-
+import Top from "../Top.jsx";
+import Nabar from "../Navbar.jsx";
 
 
 
@@ -24,10 +25,16 @@ let err=(newinfo)=>{
 }
  
 
-  return (
-    <div className="Weather">
+  return ( 
+    <>
+    <Top />
+    <Nabar />
+   
+     
+    
      <WeatherSearch update={update} err={err}/>
      <WeatherData data={data} erre={erre}/>      
-    </div>
+    
+    </>
   );
 }

@@ -4,7 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-import "./Weather.css";
+import "../css/Weather.css";
 
 export default function WeatherData({ data }) {
   const hotimg = "./MAYURI1.jpg";
@@ -73,7 +73,7 @@ export default function WeatherData({ data }) {
               </tr>
             </tbody>
           </table>
-          <div className="map"></div>
+          <div className="map">
           <img
             src={
               data.humidity > 80
@@ -87,6 +87,7 @@ export default function WeatherData({ data }) {
             alt="image"
             style={{ maxHeight: "10" }}
           />
+          </div>
           <table>
             <tbody>
               <tr>

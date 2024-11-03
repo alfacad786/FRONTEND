@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import "./login.css";
+import "../css/login.css";
 import { colors } from "@mui/material";
 import { red } from "@mui/material/colors";
 import { useNavigate } from "react-router-dom";
+import Top from "../Top.jsx";
+import Nabar from "../Navbar.jsx";
+
+
+
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -50,6 +55,9 @@ const Login = () => {
   };
 
   return (
+    <>
+    <Top />
+    <Nabar />
     <div className="login">
       <h3>
         <u>Login Form</u>
@@ -75,6 +83,7 @@ const Login = () => {
         <button type="submit">Login up</button>
       </form>
     </div>
+    </>
   );
 };
 

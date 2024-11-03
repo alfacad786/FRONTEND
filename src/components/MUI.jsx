@@ -11,6 +11,12 @@ import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import Top from "../Top.jsx";
+import Nabar from "../Navbar.jsx";
+
+
+
+
 
 export default function InputAdornments() {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -22,6 +28,9 @@ export default function InputAdornments() {
   };
 
   return (
+    <>
+    <Top />
+    <Nabar />
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
       <div>
         <TextField
@@ -168,5 +177,6 @@ export default function InputAdornments() {
         </FormControl>
       </div>
     </Box>
+    </>
   );
 }

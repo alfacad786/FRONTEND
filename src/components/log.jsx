@@ -16,8 +16,17 @@ import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import Top from "../Top.jsx";
+import Nabar from "../Navbar.jsx";
+
+
+
+
+
+
+
 function Copyright(props) {
-  return (
+  return (  
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
@@ -49,6 +58,9 @@ export default function SignIn() {
     event.preventDefault();
   };
   return (
+    <>
+    <Top />
+    <Nabar />
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -122,5 +134,6 @@ export default function SignIn() {
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
+    </>
   );
 }

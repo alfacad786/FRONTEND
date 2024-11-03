@@ -71,12 +71,19 @@
 // export default Add_Object;
 // ===========================================================================
 import React, { useState } from "react";
-import "./component.css";
+import "../css/component.css";
 import { colors } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import Button from "@mui/material";
 import { Button, Input, Text } from "@chakra-ui/react";
+import Top from "../Top.jsx";
+import Nabar from "../Navbar.jsx";
+
+
+
+
+
 
 const Add_Product = () => {
   const navigate = useNavigate();
@@ -134,23 +141,26 @@ const Add_Product = () => {
   };
 
   return (
+    <>
+    <Top />
+    <Nabar />
     <div className="component">
       <form onSubmit={handleSubmit} className="form">
       
         <div>
           <label htmlFor="image">Image :</label>
-          <input name="image" type="file" id="image" onChange={handleUpload} className="inp" />
+          <input name="image" type="file" id="image" required onChange={handleUpload} className="inp" />
 
           {error && <Text color="red.500">{error}</Text>}
         </div>
 
         <div>
           <label htmlFor="projectName">projectName:</label>
-          <input name="projectName" type="text" id="projectName" onChange={handleChange} className="inp" />
+          <input name="projectName" type="text" id="projectName" required onChange={handleChange} className="inp" />
         </div>
         <div>
           <label htmlFor="discription">discription:</label>
-          <input name="discription" type="text" id="discription" onChange={handleChange} className="inp" />
+          <input name="discription"  required type="text" id="discription" onChange={handleChange} className="inp" />
         </div>
         {/* <div>
           <label htmlFor="name">Name:</label>
@@ -168,6 +178,7 @@ const Add_Product = () => {
         <button type="submit">submit</button>
       </form>
     </div>
+    </>
   );
 };
 

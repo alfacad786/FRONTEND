@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import "./component.css";
+import "../css/component.css";
 import { colors } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import Button from "@mui/material";
 import { Button, Input, Text } from "@chakra-ui/react";
+import Top from "../Top.jsx";
+import Nabar from "../Navbar.jsx";
+
+
 
 const Add_User = () => {
   const navigate = useNavigate();
@@ -87,6 +91,9 @@ const Add_User = () => {
     navigate("/");
   };
   return (
+    <>
+    <Top />
+    <Nabar />
     <div className="component">
       <form onSubmit={handleSubmit} className="form">
         {/* <div>
@@ -152,6 +159,7 @@ const Add_User = () => {
         <button type="submit">submit</button>
       </form>
     </div>
+    </>
   );
 };
 

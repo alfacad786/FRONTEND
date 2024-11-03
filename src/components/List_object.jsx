@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./component.css";
+import "../css/component.css";
 
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -124,7 +124,7 @@ const List_Object = () => {
               </option>
             ))}
           </select>
-          <button type="submit">list object</button>
+          <button type="submit">list object1</button>
         </form>
         <h4>OBJECT DATA</h4>
         <p> {Data.projectName} </p>

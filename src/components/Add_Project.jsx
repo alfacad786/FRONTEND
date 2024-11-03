@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./component.css";
+import "../css/component.css";
 import { colors } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -58,7 +58,7 @@ const Add_Product = () => {
         console.error("Error:", error);
       });
 
-    navigate("/");
+    navigate("/Add_Object");
   };
 
   return (

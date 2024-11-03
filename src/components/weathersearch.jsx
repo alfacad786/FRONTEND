@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import "./Weather.css";
+import "../css/Weather.css";
 
 export default function WeatherSearch({update}) {
   let [city, setcity] = useState("");

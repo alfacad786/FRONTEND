@@ -1,0 +1,56 @@
+/* .CardList {
+  width: 100vw;
+  height: 200px; */
+  /* overflow: hidden; */
+  /* overflow-x: scroll; */
+
+  /* display: flex;
+  background-color: rgba(6, 34, 94, 0.664);
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center; */
+
+  /* border-radius: 5px; */
+  /* background-color: rgba(13, 56, 56, 0.767); */
+/* } */
+
+
+
+.CardList {
+  width: 100vw;
+  height: 250px;
+  /* overflow: hidden;  */
+  /* overflow-x: scroll;  */
+  
+  display: flex;
+  background-color: rgba(211, 225, 255, 0.76);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+ 
+  
+
+}
+
+.CardList1{
+  width:100vw;
+  height: 250px;
+  overflow-x:hidden; 
+  overflow-y: hidden; 
+  display: flex;
+  /* background-color: rgba(38, 102, 240, 0.76); */
+  background-color: rgba(30, 31, 32, 0.76);
+  background-image: url("/public/bgimage.jpg");
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  white-space: nowrap;
+ /* gap: 2px; */
+  transition: transform 0.2s ease-out;
+ 
+}
+
+.CardList::-webkit-scrollbar {
+  display: none; 
+}

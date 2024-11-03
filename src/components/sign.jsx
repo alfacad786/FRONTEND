@@ -25,6 +25,14 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { styled } from "@mui/material/styles";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import axios from "axios";
+import Top from "../Top.jsx";
+import Nabar from "../Navbar.jsx";
+
+
+
+
+
+
 function Copyright(props) {
   return (
     <Typography
@@ -42,7 +50,16 @@ function Copyright(props) {
     </Typography>
   );
 }
+
+
+
+
+
+
 export default function SignUp() {
+
+
+  
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -131,6 +148,10 @@ export default function SignUp() {
   // };
 
   return (
+  // <div id="sing">
+  <>
+    <Top />
+    <Nabar />
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -296,5 +317,7 @@ export default function SignUp() {
         <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
+    </>
+    // </div>
   );
 }

@@ -1,4 +1,4 @@
-import "./Page.css";
+import "../src/css/Page.css";
 
 import Card from "./Card";
 import React from "react";

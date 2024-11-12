@@ -7,7 +7,7 @@ import "../css/login.css";
 import Top from "../Top.jsx";
 import Nabar from "../Navbar.jsx";
 
-
+const HOST_3000 = import.meta.env.HOST_3000;
 const CreatBucket = () => {
   const navigate = useNavigate();
   // ------------------s3 create bucket-------------
@@ -26,7 +26,7 @@ const CreatBucket = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/creatBacket/",
+        "http://localhost:3000/api/creatBacket/"||`${HOST_3000}/api/creatBacket/`,
         formData1
       );
       const data = res.json();

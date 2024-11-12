@@ -7,7 +7,7 @@ import "../css/login.css";
 import Top from "../Top.jsx";
 import Nabar from "../Navbar.jsx";
 
-const HOST_3000 = import.meta.env.HOST_3000;
+const HOST_3000 = import.meta.env.VITE_HOST_3000;
 const CreatBucket = () => {
   const navigate = useNavigate();
   // ------------------s3 create bucket-------------

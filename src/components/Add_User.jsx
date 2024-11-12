@@ -8,7 +8,7 @@ import { Button, Input, Text } from "@chakra-ui/react";
 import Top from "../Top.jsx";
 import Nabar from "../Navbar.jsx";
 
-const HOST_3000 = import.meta.env.HOST_3000;
+const HOST_3000 = import.meta.env.VITE_HOST_3000;
 
 const Add_User = () => {
   const navigate = useNavigate();

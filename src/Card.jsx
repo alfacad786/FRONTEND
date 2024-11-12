@@ -2,8 +2,9 @@ import "../src/css/Card.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-const HOST_3000 = import.meta.env.HOST_3000;
+// const HOST_3000 = import.meta.env.HOST_3000;
 
+const HOST_3000 = import.meta.env.VITE_HOST_3000;
 
 function Card() {
  
@@ -19,8 +20,8 @@ function Card() {
    
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/ListObject/"|| `${HOST_3000}/api/ListObject/` , {
-      })
+    // "http://localhost:3000/api/ListObject/"||`${HOST_3000}/api/ListObject/`
+      .get(`${HOST_3000}/api/ListObject/`, { params: { bucketName: bucket_Mumbai },})
       .then((response) => {
         console.log(response.data); // Debugging purpose
         setObjects(response.data);
@@ -42,10 +43,11 @@ function Card() {
   const goToCardDetail = ( Object) => {
     setid(Object.Key);
     console.log(Object.Key);
-
+// ||`${HOST_3000}/api/Read/`
+// "http://localhost:3000/api/Read/"
     axios
-      .get("http://localhost:3000/api/Read/"||`${HOST_3000}/api/Read/`, {
-        params: { bucketName: bucket, objectKey:`${Object.Key}`},
+      .get(`${HOST_3000}/api/Read/`, {
+        params: { bucketName: bucket_Mumbai, objectKey:`${Object.Key}`},
       })
       // const data = response.json();
       .then((response) => { 

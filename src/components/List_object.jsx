@@ -3,7 +3,7 @@ import "../css/component.css";
 
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+const HOST_3000 = import.meta.env.HOST_3000;
 const List_Object = () => {
   const navigate = useNavigate();
 
@@ -12,7 +12,7 @@ const List_Object = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/ListBuckets/")
+      .get("http://localhost:3000/api/ListBuckets/"||`${HOST_3000}/api/ListBuckets/`)
       .then((response) => {
         setbuckets(response.data);
         // console.log("this:", response.data, "from card");
@@ -42,7 +42,7 @@ const List_Object = () => {
 
     if (name === "bucketName" && value) {
       axios
-        .get("http://localhost:3000/api/ListObject/", {
+        .get("http://localhost:3000/api/ListObject/"||`${HOST_3000}/api/ListObject/`, {
           params: { bucketName: value },
         })
         .then((response) => {
@@ -82,7 +82,7 @@ const List_Object = () => {
     e.preventDefault();
 
     axios
-      .get("http://localhost:3000/api/Read/", { params: formData })
+      .get("http://localhost:3000/api/Read/"||`${HOST_3000}/api/Read/`, { params: formData })
 
       // const data = response.json();
       .then((response) => {

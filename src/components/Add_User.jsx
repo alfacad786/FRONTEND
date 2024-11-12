@@ -8,7 +8,7 @@ import { Button, Input, Text } from "@chakra-ui/react";
 import Top from "../Top.jsx";
 import Nabar from "../Navbar.jsx";
 
-
+const HOST_3000 = import.meta.env.HOST_3000;
 
 const Add_User = () => {
   const navigate = useNavigate();
@@ -58,7 +58,7 @@ const Add_User = () => {
     // }
 
     axios
-      .post("http://localhost:3000/api/newUser/", formData, {
+      .post("http://localhost:3000/api/newUser/"||`${HOST_3000}/api/newUser/`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

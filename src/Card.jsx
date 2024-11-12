@@ -2,7 +2,7 @@ import "../src/css/Card.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+const HOST_3000 = import.meta.env.HOST_3000;
 
 
 function Card() {
@@ -19,8 +19,7 @@ function Card() {
    
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/ListObject/", {
-        params: { bucketName: bucket_Mumbai },
+      .get("http://localhost:3000/api/ListObject/"|| `${HOST_3000}/api/ListObject/` , {
       })
       .then((response) => {
         console.log(response.data); // Debugging purpose
@@ -45,7 +44,7 @@ function Card() {
     console.log(Object.Key);
 
     axios
-      .get("http://localhost:3000/api/Read/", {
+      .get("http://localhost:3000/api/Read/"||`${HOST_3000}/api/Read/`, {
         params: { bucketName: bucket, objectKey:`${Object.Key}`},
       })
       // const data = response.json();

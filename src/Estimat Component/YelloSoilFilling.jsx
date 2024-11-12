@@ -9,7 +9,7 @@ import BricksAreaCal from "./Area.jsx";
 import Top from "../Top.jsx";
 import Nabar from "../Navbar.jsx";
 import Bottom from "../bottom.jsx";
-
+const HOST_3000 = import.meta.env.HOST_3000;
 export default function YELLOW_SOIL_FILING() {
   const [open, setOpen] = React.useState(false);
 
@@ -48,7 +48,7 @@ export default function YELLOW_SOIL_FILING() {
       e.preventDefault();
       try {
         const response = await fetch(
-          "http://localhost:3000/api/YELLOW_SOIL_FILING/",
+          "http://localhost:3000/api/YELLOW_SOIL_FILING/"||`${HOST_3000}/api/YELLOW_SOIL_FILING/`,
           {
             method: "post",
             headers: {

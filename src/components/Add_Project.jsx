@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import Button from "@mui/material";
 import { Button, Input, Text } from "@chakra-ui/react";
-
+const HOST_3000 = import.meta.env.HOST_3000;
 const Add_Product = () => {
   const navigate = useNavigate();
 
@@ -45,7 +45,7 @@ const Add_Product = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/api/newUser/", formData, {
+      .post("http://localhost:3000/api/newUser/"||`${HOST_3000}api/newUser/`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

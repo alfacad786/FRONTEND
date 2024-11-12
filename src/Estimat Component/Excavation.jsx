@@ -9,7 +9,7 @@ import BricksAreaCal from "./Area.jsx";
 import Top from "../Top.jsx";
 import Nabar from "../Navbar.jsx";
 import Bottom from "../bottom.jsx";
-
+const HOST_3000 = import.meta.env.HOST_3000;
 export default function EXCAVATION() {
   const [open, setOpen] = React.useState(false);
 
@@ -47,7 +47,7 @@ export default function EXCAVATION() {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await fetch("http://localhost:3000/api/EXCAVATION/", {
+        const response = await fetch("http://localhost:3000/api/EXCAVATION/"||`${HOST_3000}/api/EXCAVATION/` , {
           method: "post",
           headers: {
             "Content-Type": "application/json",

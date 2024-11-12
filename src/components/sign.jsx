@@ -29,6 +29,7 @@ import Top from "../Top.jsx";
 import Nabar from "../Navbar.jsx";
 
 
+const HOST_3000 = import.meta.env.HOST_3000;
 
 
 
@@ -120,7 +121,7 @@ export default function SignUp() {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/api/newUser/", formData, {
+      .post("http://localhost:3000/api/newUser/"||`${HOST_3000}/api/newUser/`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

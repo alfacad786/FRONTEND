@@ -6,8 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Top from "../Top.jsx";
 import Nabar from "../Navbar.jsx";
 
-
-
+const HOST_3000 = import.meta.env.HOST_3000;
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +24,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/api/login", {
+      const response = await fetch("http://localhost:3000/api/login"||`${HOST_3000}/api/login`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",

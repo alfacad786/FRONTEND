@@ -3,7 +3,7 @@ import "../css/component.css";
 
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+const HOST_3000 = import.meta.env.HOST_3000;
 const List_Bucket = () => {
   const navigate = useNavigate();
 
@@ -13,7 +13,7 @@ const List_Bucket = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/ListBuckets/")
+      .get("http://localhost:3000/api/ListBuckets/"||`${HOST_3000}/api/ListBuckets/`)
       .then((response) => {
         setProducts(response.data);
         // console.log("this:", response.data, "from card");

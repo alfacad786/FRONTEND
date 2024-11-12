@@ -31,7 +31,7 @@ export default defineConfig({
     outDir: 'dist'
   },
   server: {
-    proxy: {
+      proxy: {
       '/api': 'http://localhost:3000',
     }
   }

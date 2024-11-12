@@ -9,7 +9,7 @@ import BricksAreaCal from "./Area.jsx";
 import Top from "../Top.jsx";
 import Nabar from "../Navbar.jsx";
 import Bottom from "../bottom.jsx";
-const HOST_3000 = import.meta.env.HOST_3000;
+const HOST_3000 = import.meta.env.VITE_HOST_3000;
 export default function EXCAVATION() {
   const [open, setOpen] = React.useState(false);
 

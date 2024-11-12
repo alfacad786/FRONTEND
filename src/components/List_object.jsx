@@ -3,7 +3,7 @@ import "../css/component.css";
 
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-const HOST_3000 = import.meta.env.HOST_3000;
+const HOST_3000 = import.meta.env.VITE_HOST_3000;
 const List_Object = () => {
   const navigate = useNavigate();
 

@@ -18,7 +18,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Top from "../Top.jsx";
 import Nabar from "../Navbar.jsx";
-
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -56,6 +56,12 @@ export default function SignIn() {
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
+  };
+  const navigate = useNavigate();
+  const singup = async (e) => {
+    e.preventDefault();
+
+    navigate("/singup");
   };
   return (
     <>
@@ -124,9 +130,12 @@ export default function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="/singup" variant="body2">
+              <Button onClick={singup}>
+              Don't have an account? Sign Up
+                </Button>
+                {/* <Link href="/singup" variant="body2">
                   Don't have an account? Sign Up
-                </Link>
+                </Link> */}
               </Grid>
             </Grid>
           </Box>

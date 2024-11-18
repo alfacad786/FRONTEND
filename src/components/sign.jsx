@@ -121,7 +121,7 @@ export default function SignUp() {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/api/newUser/"||`${HOST_3000}/api/newUser/`, formData, {
+      .post(`${HOST_3000}/api/newUser/`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

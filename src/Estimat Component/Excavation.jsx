@@ -47,8 +47,8 @@ export default function EXCAVATION() {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        
-        const response = await fetch("http://localhost:3000/api/EXCAVATION/"||`${HOST_3000}/api/EXCAVATION/` , {
+        // "http://localhost:3000/api/EXCAVATION/"||
+        const response = await fetch(`${HOST_3000}/api/EXCAVATION/` , {
           method: "post",
           headers: {
             "Content-Type": "application/json",

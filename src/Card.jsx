@@ -5,7 +5,7 @@ import axios from "axios";
 // const HOST_3000 = import.meta.env.HOST_3000;
 
 const HOST_3000=import.meta.env.VITE_HOST_3000;
-console.log("Current HOST_3000:", HOST_3000);
+console.log("Current HOST_3000:", HOST_3000,"card.jsx");
 function Card() {
  
   const [id, setid] = useState(null);

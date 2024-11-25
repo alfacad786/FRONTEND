@@ -50,7 +50,7 @@ export default function EXCAVATION() {
         const API_URL =
         process.env.NODE_ENV === "production"
           ? `${HOST_3000}/api/EXCAVATION/`
-          : "http://localhost:3000/api/YELLOW_SOIL_FILING/";
+          : "http://localhost:3000/api/EXCAVATION/";
         
           console.log("naya ",API_URL,"url if els wala");
 

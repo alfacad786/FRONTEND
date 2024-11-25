@@ -72,13 +72,13 @@ export default function YELLOW_SOIL_FILING() {
         }
 
         const data = await response.json();
-        console.log("***", data.resio[4], "***");
+        console.log("***", data, "***");
         setArea(data.area);
-        setCivilWork(data.resio[0].CivilWork);
-        setRasio(data.resio[1].resio);
-        setCement(data.resio[2].cement);
-        setSend(data.resio[3].send);
-        setAgriggat(data.resio[4].Agriggat);
+        setCivilWork(data.resio[0]);
+        setRasio(data.resio[1]);
+        setCement(data.resio[2]);
+        setSend(data.resio[3]);
+        setAgriggat(data.resio[4]);
         setBricks(data.resio[5]);
         const area = data.area;
         // navigate("/login");

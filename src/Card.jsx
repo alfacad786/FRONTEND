@@ -29,8 +29,9 @@ function Card() {
         
       })
       .catch((error) => {
-        console.log("thar was an error fetching the data", error, "os");
+        console.log("thar was an error fetching the data", error,error.message, "os");
       });
+     
       
   }, []);
 

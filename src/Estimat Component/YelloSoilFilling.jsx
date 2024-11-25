@@ -47,8 +47,17 @@ export default function YELLOW_SOIL_FILING() {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/YELLOW_SOIL_FILING/"||`${HOST_3000}/api/YELLOW_SOIL_FILING/`,
+        const API_URL =
+          process.env.NODE_ENV === "production"
+            ? `${HOST_3000}/api/YELLOW_SOIL_FILING/`
+            : "http://localhost:3000/api/YELLOW_SOIL_FILING/";
+
+        // const API_URL = `${HOST_3000}/api/YELLOW_SOIL_FILING/`;
+        // const response = await fetch(API_URL);
+
+        // const response = await fetch(API_URL);
+        console.log("naya ",API_URL,"url if els wala");
+        const response = await fetch(API_URL,
           {
             method: "post",
             headers: {

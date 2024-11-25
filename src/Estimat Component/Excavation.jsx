@@ -47,8 +47,15 @@ export default function EXCAVATION() {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
+        const API_URL =
+        process.env.NODE_ENV === "production"
+          ? `${HOST_3000}/api/EXCAVATION/`
+          : "http://localhost:3000/api/YELLOW_SOIL_FILING/";
         
-        const response = await fetch("http://localhost:3000/api/EXCAVATION/"||`${HOST_3000}/api/EXCAVATION/` , {
+          console.log("naya ",API_URL,"url if els wala");
+
+
+        const response = await fetch(API_URL , {
           method: "post",
           headers: {
             "Content-Type": "application/json",

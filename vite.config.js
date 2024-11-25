@@ -31,8 +31,10 @@ export default defineConfig({
     outDir: 'dist'
   },
   server: {
-    proxy: {
-      '/api': 'http://localhost:3000',
+      proxy: {
+      // '/api': 'http://localhost:3000',
+      // '/api': 'http://3.110.154.77:3000',
+      '/api': process.env.VITE_HOST_3000,
     }
   }
 })

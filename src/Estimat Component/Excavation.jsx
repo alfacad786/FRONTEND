@@ -68,7 +68,9 @@ export default function EXCAVATION() {
         }
 
         const data = await response.json();
-        console.log("***", data.resio[4], "***");
+        const area = data.area;
+        const resio = data.resio;
+        console.log("***",data,"resio=",resio,"area=",area, "***");
         setArea(data.area);
         // setCivilWork(data.resio[0].CivilWork);
         // setRasio(data.resio[1].resio);
@@ -76,7 +78,7 @@ export default function EXCAVATION() {
         // setSend(data.resio[3].send);
         // setAgriggat(data.resio[4].Agriggat);
         // setBricks(data.resio[5]);
-        const area = data.area;
+       
         // navigate("/login");
       } catch (error) {
         console.error("Error:", error);

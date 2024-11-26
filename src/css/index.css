@@ -1,14 +1,12 @@
-html{
-  width: 100vw;
+html {
   min-width: 320px;
-  background-color: #ff0d2d;
+  min-height: 667px;
+  background-color: #050203;
 }
 :root {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   line-height: 0.3;
   font-weight: 300;
-
-
 
   /* font-synthesis: none; */
   text-rendering: optimizeLegibility;
@@ -16,50 +14,45 @@ html{
   -moz-osx-font-smoothing: grayscale;
 }
 @font-face {
-  font-family: 'Trilo';
-  src: url('../fonts/-trilo.ttf') format('truetype');
+  font-family: "Trilo";
+  src: url("../fonts/-trilo.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-
-
-
 a {
-  font-weight: 400; 
+  font-weight: 400;
 }
 a:hover {
   color: #ff0d2d;
 }
 
 body {
+  min-width: 320px;
+  min-height: 667px;
+  background-color: #ff0d2d;
   color: #535bf2;
   margin: 0;
   display: flex;
   place-items: top;
-  min-width: 320px;
-  min-height: 100vh;
-  overflow:hidden;
+
+  overflow: hidden;
   overflow-y: auto;
-  
 }
 body::-webkit-scrollbar {
-  width: .1px /* Change width to your preference */
+  width: 0.1px; /* Change width to your preference */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color:#535bf200; /* Scrollbar thumb color */
+  background-color: #535bf200; /* Scrollbar thumb color */
   border-radius: 10px; /* Rounded edges */
- 
 }
 
 body::-webkit-scrollbar-track {
   background-color: rgba(255, 255, 255, 0); /* Scrollbar track color */
 }
 
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-

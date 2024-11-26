@@ -1,5 +1,5 @@
 import "../src/css/App.css";
-import "../src/css/Center.css";
+// import "../src/css/Center.css";
 import Top from "./Top.jsx";
 import Nabar from "./Navbar.jsx";
 import Page from "./page.jsx";

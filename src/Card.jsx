@@ -20,6 +20,10 @@ function Card() {
    
   useEffect(() => {
     axios
+    const baseURL = process.env.NODE_ENV === 'production'
+    ? 'http://3.110.154.77:3000'
+    : 'http://localhost:3000';
+
     // "http://localhost:3000/api/ListObject/"||`${HOST_3000}/api/ListObject/`
       .get(`${HOST_3000}/api/ListObject/`, { params: { bucketName: bucket_Mumbai },})
       .then((response) => {

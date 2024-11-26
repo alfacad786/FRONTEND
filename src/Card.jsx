@@ -23,7 +23,7 @@ function Card() {
   
 
     // "http://localhost:3000/api/ListObject/"||`${HOST_3000}/api/ListObject/`
-      .get(`${HOST_3000}/api/ListObject/`, { params: { bucketName: bucket_Mumbai },})
+      .get(`${HOST_3000}/api/ListObject/`,{ timeout: 10000 }, { params: { bucketName: bucket_Mumbai },})
       .then((response) => {
         console.log(response.data); // Debugging purpose
         setObjects(response.data);

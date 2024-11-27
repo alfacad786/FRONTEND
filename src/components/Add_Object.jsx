@@ -81,8 +81,8 @@ import Top from "../Top.jsx";
 import Nabar from "../Navbar.jsx";
 
 
-const HOST_3000 = import.meta.env.VITE_HOST_3000;
-
+const HOST_3000=import.meta.env.VITE_HOST_3000;
+console.log("Current HOST_3000:", HOST_3000,"Add_Object.jsx");
 
 
 const Add_Product = () => {
@@ -124,7 +124,7 @@ const Add_Product = () => {
     e.preventDefault();
 
     axios
-      .post(`${HOST_3000}api/UPDATE`, formData, {
+      .post(`${HOST_3000}/api/UPDATE`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

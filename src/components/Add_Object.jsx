@@ -124,7 +124,7 @@ const Add_Product = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3000/api/UPDATE"||`${HOST_3000}api/UPDATE`, formData, {
+      .post(`${HOST_3000}api/UPDATE`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

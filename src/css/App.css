@@ -7,7 +7,10 @@ height: 100vh;
   overflow: hidden;
   overflow-y: auto;
 }
-
+#root::-webkit-scrollbar {
+  width: 0.1px; /* Change width to your preference */
+  
+}
 .main {
   width: 100vw;
  

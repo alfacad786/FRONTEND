@@ -21,9 +21,9 @@ function Card() {
   useEffect(() => {
     axios
   
-
+    // { timeout: 800000 }
     // "http://localhost:3000/api/ListObject/"||`${HOST_3000}/api/ListObject/`
-      .get(`${HOST_3000}/api/ListObject/`,{ params: { bucketName: bucket_Mumbai }},{ timeout: 800000 },)
+      .get(`${HOST_3000}/api/ListObject/`,{ params: { bucketName: bucket_Mumbai }})
       .then((response) => {
         console.log(response.data); // Debugging purpose
         setObjects(response.data);
@@ -91,7 +91,7 @@ function Card() {
     <div id="Card" key={Object.Key} onClick={() => goToCardDetail(Object)}>
       {/* <p style={{ color: "white" }}>{Object.Key} </p> */}
       <img src={Object.imageUrl} alt="image" />
-      <p>{Object.projectName}</p>
+      {/* <p>{Object.projectName}</p> */}
       {/* <p>{Object.discription}</p> */}
     </div>
   ));

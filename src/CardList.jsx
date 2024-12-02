@@ -10,7 +10,7 @@ function CardList() {
   const [containerWidth, setContainerWidth] = useState(0);
 
   useEffect(() => {
-    const cardContainer = document.querySelector('.CardList1');
+    const cardContainer = document.querySelector('.CardList');
     setContainerWidth(cardContainer.offsetWidth);
     
     const interval = setInterval(() => {
@@ -27,7 +27,7 @@ function CardList() {
   }, [containerWidth]);
 
   useEffect(() => {
-    const cardContainer = document.querySelector('.CardList1');
+    const cardContainer = document.querySelector('.CardList');
     cardContainer.scrollTo({
       left: scrollPosition,
       behavior: 'smooth'
@@ -41,10 +41,10 @@ function CardList() {
   // });
   return (
     <div className="CardList">
-      <div className="CardList1">
+      {/* <div className="CardList1"> */}
       <Card />
-      </div>
-    </div>
+      {/* </div> */}
+     </div>
   );
 }
 export default CardList;

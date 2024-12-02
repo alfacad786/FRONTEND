@@ -41,6 +41,7 @@ body {
 }
 body::-webkit-scrollbar {
   width: 0.1px; /* Change width to your preference */
+  
 }
 
 body::-webkit-scrollbar-thumb {

@@ -1,7 +1,7 @@
 import "../css/Home.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Top from "../Top.jsx";
+import ResponsiveAppBar from "../Top.jsx";
 import Nabar from "../Navbar.jsx";
 import HomeBody from "./HomeBody.jsx";
 import Bottom from "../bottom.jsx";
@@ -15,7 +15,7 @@ function Home() {
   }
   return (
     <>
-      <Top />
+      <ResponsiveAppBar />
       <Nabar />
       <CardList/>
       <HomeBody />

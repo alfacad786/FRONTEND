@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import ResponsiveAppBar from "../Top.jsx";
 import Nabar from "../Navbar.jsx";
-import HomeBody from "./HomeBody.jsx";
+import HomeBody from "../HomeBody.jsx";
 import Bottom from "../bottom.jsx";
 import TitlebarBelowImageList from "../image/imageList.jsx";
 import CardList from "../CardList.jsx";

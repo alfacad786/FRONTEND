@@ -17,7 +17,7 @@ function CivilEngineering_ArchitecturalPlanning() {
   return (
     <React.Fragment>
       <Button onClick={handleOpen}>
-        <h6>Civil Engineering & Architectural Planning</h6>
+        <h5>Civil Engineering & Architectural Planning</h5>
       </Button>
       <Modal
         open={open}
@@ -60,7 +60,7 @@ function ProjectManagement() {
   return (
     <React.Fragment>
       <Button onClick={handleOpen}>
-        <h6>Project Management</h6>
+        <h5>Project Management</h5>
       </Button>
       <Modal
         open={open}
@@ -90,7 +90,7 @@ function WebDevelopment() {
   return (
     <React.Fragment>
       <Button onClick={handleOpen}>
-        <h6>Web Development</h6>
+        <h5>Web Development</h5>
       </Button>
       <Modal
         open={open}
@@ -141,7 +141,7 @@ export default function TechnicalSkills() {
 
           <WebDevelopment />
 
-          <Button onClick={handleClose}>Close </Button>
+          <Button onClick={handleClose}><h5>Close</h5> </Button>
         </Box>
       </Modal>
     </>

@@ -1,11 +1,11 @@
 
 
-
+import "../css/TechnicalSkills.css";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
-import "../css/TechnicalSkills.css";
+
 
 const style = {
   position: "absolute",
@@ -191,9 +191,9 @@ export default function  EXPERIANSE() {
   return (
     <>
     
-      <Button id="Career_Highlights_Button" onClick={handleOpen}>
-        EXPERIANSE
-      </Button>
+      <button id="Career_Highlights_Button" onClick={handleOpen}>
+      EXPERIANSE
+      </button>
       <Modal
      
         open={open}
@@ -202,7 +202,7 @@ export default function  EXPERIANSE() {
         aria-describedby="parent-modal-description"
       >
         <Box id="TechnicalSkills">
-          <h2>EXPERIANSE </h2>
+          <h3>EXPERIANSE </h3>
           <Alfa_Consultant />
           <Shahil_Engineer />
           <Freelance />

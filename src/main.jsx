@@ -8,7 +8,7 @@ import './scss/styles.scss'; // Import your custom styles
 import 'bootstrap';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
     <React.StrictMode>
     
        <App />

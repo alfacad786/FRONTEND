@@ -1,5 +1,5 @@
 import "../src/css/Navbar.css";
-
+import "./css//Aboute.css";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import TechnicalSkills from "./c.v.component/TecnicalSkill.jsx";
@@ -69,6 +69,7 @@ function Nabar() {
       <button onClick={goToAdd_User}>Add_User</button>
       <button onClick={goToMUI}>MUI</button>
       <button onClick={goToQUNTITY}>QUNTITY</button> */}
+      <button onClick={goToAdd_Object}>Add_3dProject</button>
       <EXPERIANSE />
         <About />
         {/* <Education /> */}

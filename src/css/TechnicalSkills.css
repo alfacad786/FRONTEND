@@ -45,21 +45,21 @@ span:hover{
   
  }
 
-/* #Career_Highlights_Button {
+#Career_Highlights_Button {
   width:180px;
-  background-color: rgba(104, 104, 104, 0.61);
+  background-color: rgba(71, 23, 23, 0.863);
   border-radius: 10px;
-  box-shadow: 5px 1px 5px rgb(129, 129, 129);
+  box-shadow: 5px 1px 5px rgb(224, 224, 224);
   margin-top: 10px;
   padding: 5px;
   font-size: medium;
   color: #ffffff;
-} */
-/* #Career_Highlights_Button:hover{
-  background-color: rgb(45, 69, 207);
+}
+#Career_Highlights_Button:hover{
+  background-color: rgb(255, 255, 255);
   box-shadow: 5px 1px 5px rgb(255, 255, 255);
-  color: #ffffff;
-} */
+  color: #af0101;
+}
 
 #TechnicalSkills {
   position: absolute;
@@ -67,7 +67,7 @@ span:hover{
   left: 15vw;
   width: 70vw;
   height: auto;
-  background-color: antiquewhite;
+  background-color: rgba(221, 218, 207, 0.952);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -82,7 +82,7 @@ span:hover{
   width: 80vw;
   height: 80vh;  
 
-  background-color: rgb(168, 96, 1);
+  background-color: rgb(165, 157, 146);
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -91,5 +91,33 @@ span:hover{
   text-align: center;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 2px 1px 13px slategray;
+  box-shadow: 2px 1px 13px rgb(96, 170, 245);
 }
+h2{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%; 
+  background-color: #115fac;
+  padding: 3px;
+  color: #b60000;
+  margin-top: 25px;
+  
+ }
+ #TechnicalSkills h3{
+ 
+  width: auto; 
+  background-color: #c5d0db50;
+  padding: 3px;
+  color: #b60000;
+  margin-top: 25px;
+  
+ }
+  #TechnicalSkills h5{
+ 
+  width: auto; 
+  background-color: #c5d0db50;
+  padding: 3px;
+  color: #000000d0;
+  margin-top: 25px;
+  
+ }

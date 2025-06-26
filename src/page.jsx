@@ -1,7 +1,7 @@
 import "../src/css/Page.css";
 // import "./CardList.css";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Home from "./components/Home";
+import Home from "./HomePage";
 import Aboute from "./components/Aboute";
 import Contect from "./components/Contect";
 import Product from "./components/Bucket";

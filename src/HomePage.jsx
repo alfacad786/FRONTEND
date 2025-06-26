@@ -1,12 +1,12 @@
-import "../css/Home.css";
+import "./css/Home.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import ResponsiveAppBar from "../Top.jsx";
-import Nabar from "../Navbar.jsx";
-import HomeBody from "../HomeBody.jsx";
-import Bottom from "../bottom.jsx";
-import TitlebarBelowImageList from "../image/imageList.jsx";
-import CardList from "../CardList.jsx";
+import ResponsiveAppBar from "./Top.jsx";
+import Nabar from "./Navbar.jsx";
+import HomeBody from "./HomeBody.jsx";
+import Bottom from "./bottom.jsx";
+import TitlebarBelowImageList from "./image/imageList.jsx";
+import CardList from "./CardList.jsx";
 
 function Home() {
   const navigate = useNavigate();
@@ -76,7 +76,7 @@ function Home() {
           <a href="mailto:alfa_cad786@yahoo.com">alfa_cad786@yahoo.com</a>.
         </p>
       </div>
-      {/* <TitlebarBelowImageList /> */}
+      <TitlebarBelowImageList />
       <Bottom />
     </>
   );

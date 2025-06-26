@@ -21,7 +21,7 @@ function CardList() {
         }
         return prevPosition + containerWidth / 4; // Scroll by the width of one card
       });
-    }, 1000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [containerWidth]);

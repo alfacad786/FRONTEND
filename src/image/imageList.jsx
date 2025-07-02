@@ -7,23 +7,34 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 export default function TitlebarBelowImageList() {
+  
   const [bucket, setbuckets] = useState("aaliya-1721126150278");
+
   const [Objects, setObjects] = useState([]);
   const navigate = useNavigate();
   const [author, setauthor] = useState("ASIFIQBAL");
   const HOST_3000 = import.meta.env.VITE_HOST_3000;
+ 
   useEffect(() => {
+    console.log("bucket name image file", bucket)
     axios
-      .get("http://localhost:3000/api/ListObject/"||`${HOST_3000}/api/ListObject/`, {
+    
+      // .get("http://localhost:3000/api/ListObject/"||`${HOST_3000}/api/ListObject/`, {
+      //   params: { bucketName: bucket },
+        
+      // }, 
+      .get(`${HOST_3000}/api/ListObject/`, {
         params: { bucketName: bucket },
-      })
+        
+      },
+    )
       .then((response) => {
-        console.log(response.data); // Debugging purpose
+        console.log("respons data",response.data); // Debugging purpose
         setObjects(response.data);
         // console.log("bucket list:", response.data);
       })
       .catch((error) => {
-        console.log("thar was an error fetching the data", error, "os");
+        console.log("ye wala thar was an error fetching the data", error, "os");
       });
   }, []);
   return (

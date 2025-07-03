@@ -19,29 +19,44 @@ function Card() {
   const [bucket_Mumbai, setbuckets_Mumbai] = useState("rizwana-1724849048961");
   // temperari close call api ListObject
 
-  useEffect(() => {
-    axios
+  // useEffect(() => {
+  //   axios
 
-      // { timeout: 800000 }
-      // "http://localhost:3000/api/ListObject/"||`${HOST_3000}/api/ListObject/`
-      .get(`${HOST_3000}/api/ListObject/`, {
+  //     .get(`${HOST_3000}/api/ListObject/`, {
+  //       params: { bucketName: bucket_Mumbai },
+  //     })
+  //     .then((response) => {
+  //       // console.log(response.data); // Debugging purpose
+  //       setObjects(response.data);
+  //       // console.log("bucket list:", response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(
+  //         "thar was an error fetching the data",
+  //         error,
+  //         error.message,
+  //         "os"
+  //       );
+  //     });
+  // }, [location.key]);
+
+  // ++++++++++++++++==========================++++++++++++++++++
+
+  const fetchCardList = async () => {
+    try {
+      const response = await axios.get(`${HOST_3000}/api/ListObject/`, {
         params: { bucketName: bucket_Mumbai },
-      })
-      .then((response) => {
-        // console.log(response.data); // Debugging purpose
-        setObjects(response.data);
-        // console.log("bucket list:", response.data);
-      })
-      .catch((error) => {
-        console.log(
-          "thar was an error fetching the data",
-          error,
-          error.message,
-          "os"
-        );
       });
-  }, [location.key]);
-
+      console.log("Fetched cards:", response.data);
+      setObjects(response.data);
+    } catch (error) {
+      console.log("Error fetching cards:", error.message);
+    }
+  };
+  useEffect(() => {
+    fetchCardList();
+  }, [location.pathname]);
+  // ++++++++++++++++==========================++++++++++++++++++
   // ------------------read object from aws s3 bucket-------------
 
   const goToCardDetail = (Object) => {

@@ -40,7 +40,7 @@ function CardDetail() {
         </div>
         
       </div>
-      <button type="button" className="btn btn-primary" onClick={() =>navigate("/", id)}>BACK</button>
+      <button type="button" className="btn btn-primary" onClick={() =>navigate("/")}>BACK</button>
     </div>
     
     </>

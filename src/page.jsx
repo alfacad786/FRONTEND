@@ -1,6 +1,6 @@
 import "../src/css/Page.css";
 // import "./CardList.css";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes,useLocation , Link } from "react-router-dom";
 import Home from "./HomePage";
 import Aboute from "./components/Aboute";
 import Contect from "./components/Contect";
@@ -24,9 +24,10 @@ import Quntitycal from "./components/Quntity";
 
 
 function Page() {
+    const location = useLocation();
   return (
     // <div className="Page">
-      <Routes>
+      <Routes location={location} key={location.pathname}>
       <Route path="/" element={<Home />} />
         <Route path="/Aboute" element={<Aboute />} />
         <Route path="/Contect" element={<Contect />} />

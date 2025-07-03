@@ -47,7 +47,7 @@ function Card() {
       const response = await axios.get(`${HOST_3000}/api/ListObject/`, {
         params: { bucketName: bucket_Mumbai },
       });
-      console.log("Fetched cards:", response.data);
+      console.log("S3 response data:", response.data);
       setObjects(response.data);
     } catch (error) {
       console.log("Error fetching cards:", error.message);
@@ -55,7 +55,7 @@ function Card() {
   };
   useEffect(() => {
     fetchCardList();
-  }, [location.pathname]);
+  }, []);
   // ++++++++++++++++==========================++++++++++++++++++
   // ------------------read object from aws s3 bucket-------------
 

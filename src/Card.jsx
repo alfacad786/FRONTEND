@@ -8,8 +8,6 @@ import { useLocation } from "react-router-dom";
 const HOST_3000 = import.meta.env.VITE_HOST_3000;
 console.log("Current HOST_3000:", HOST_3000, "card.jsx");
 function Card() {
-  const [id, setid] = useState(null);
-  const [Data, setData] = useState([]);
   const [Objects, setObjects] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
@@ -19,83 +17,89 @@ function Card() {
   const [bucket_Mumbai, setbuckets_Mumbai] = useState("rizwana-1724849048961");
   // temperari close call api ListObject
 
-  // useEffect(() => {
-  //   axios
+  useEffect(() => {
+    axios
 
-  //     .get(`${HOST_3000}/api/ListObject/`, {
-  //       params: { bucketName: bucket_Mumbai },
-  //     })
-  //     .then((response) => {
-  //       // console.log(response.data); // Debugging purpose
-  //       setObjects(response.data);
-  //       // console.log("bucket list:", response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(
-  //         "thar was an error fetching the data",
-  //         error,
-  //         error.message,
-  //         "os"
-  //       );
-  //     });
-  // }, [location.key]);
+      .get(`${HOST_3000}/api/ListObject/`, {
+        params: { bucketName: bucket_Mumbai },
+      })
+      .then((response) => {
+        // console.log(response.data); // Debugging purpose
+        setObjects(response.data);
+        // console.log("bucket list:", response.data);
+      })
+      .catch((error) => {
+        console.log(
+          "thar was an error fetching the data",
+          error,
+          error.message,
+          "os"
+        );
+      });
+  }, [location.key]);
 
   // ++++++++++++++++==========================++++++++++++++++++
 
-  const fetchCardList = async () => {
-    try {
-      const response = await axios.get(`${HOST_3000}/api/ListObject/`, {
-        params: { bucketName: bucket_Mumbai },
-      });
-      console.log("S3 response data:", response.data);
-      setObjects(response.data);
-    } catch (error) {
-      console.log("Error fetching cards:", error.message);
-    }
-  };
-  useEffect(() => {
-    fetchCardList();
-  }, []);
+  // const fetchCardList = async () => {
+  //   try {
+  //     const response = await axios.get(`${HOST_3000}/api/ListObject/`, {
+  //       params: { bucketName: bucket_Mumbai },
+  //     });
+  //     console.log("S3 response data:", response.data);
+  //     setObjects(response.data);
+  //   } catch (error) {
+  //     console.log("Error fetching cards:", error.message);
+  //   }
+  // };
+  // useEffect(() => {
+  //   fetchCardList();
+  // }, []);
   // ++++++++++++++++==========================++++++++++++++++++
   // ------------------read object from aws s3 bucket-------------
-
+  const [id, setid] = useState(null);
+  const [Data, setData] = useState([]);
   const goToCardDetail = (Object) => {
     setid(Object.Key);
-    console.log(Object.Key);
-    // ||`${HOST_3000}/api/Read/`
-    // "http://localhost:3000/api/Read/"
+    console.log("Clicked key:", Object.Key);
+
     axios
       .get(`${HOST_3000}/api/Read/`, {
         params: { bucketName: bucket_Mumbai, objectKey: `${Object.Key}` },
       })
-      // const data = response.json();
+
       .then((response) => {
-        setData(response.data.data);
-        console.log("THIS", response.data, "data");
+        const id = Object.Key;
+        const Data = response.data.data;
+        console.log("Object data mila:", Data);
+
+        // setData(response.data.data);
+        console.log("THIS", Data, "data");
+        navigate("/CardDetail", { state: { Data, id } });
+        console.log(
+          "Navigating to CardDetail with data:",
+          Data,
+          "clickedKey:",
+          id
+        );
       })
       .catch((error) => {
         console.error("Error:", error);
       });
-
-    // console.log("formData:", formData);
-    // console.log("onClick key:", key, "/n", "onClick Data:", Data);
   };
 
-  // console.log("dATA*:", Data, "***"); //
-  // console.log("dATA##:", Data, "###");
-
-  useEffect(() => {
-    if (Data && id) {
-      navigate("/CardDetail", { state: { Data, id } });
-      console.log(
-        "Navigating to CardDetail with data:",
-        Data,
-        "clickedKey:",
-        id
-      );
-    }
-  }, [Data, id]);
-
+  // ===========================================================
+  // useEffect(() => {
+  //   if (Data && id) {
+  //     navigate("/CardDetail", { state: { Data, id } });
+  //     console.log(
+  //       "Navigating to CardDetail with data:",
+  //       Data,
+  //       "clickedKey:",
+  //       id
+  //     );
+  //   }
+  // }, [Data, id]);
+  // ===========================================================
   const car = Objects.map((Object) => (
     <div id="Card" key={Object.Key} onClick={() => goToCardDetail(Object)}>
       {/* <p style={{ color: "white" }}>{Object.Key} </p> */}

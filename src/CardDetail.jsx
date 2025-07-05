@@ -12,13 +12,16 @@ function CardDetail() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { Data, id } = location.state || {};
+  const { Data,id} = location.state;
 
   const { projectName, discription, imageUrl,Key } = Data;
   // const clickedKey = location.state || {};
-  console.log("carddetail data:", Data);
-  console.log("id:", id);
-  console.log("imageUrl:",Data.imageUrl);
+  
+   console.log("carddetail data:", Data);
+    console.log("carddetail id:", id);
+  // console.log("id:", id);
+  // console.log("imageUrl:",Data.imageUrl);
+  // console.log("imageUrl:", imageUrl);
   // console.log("carddetail clickedKey:", clickedKey);
 
   return (
@@ -30,7 +33,7 @@ function CardDetail() {
       <h4>{projectName}</h4>
       <div className="CardDetail1">
         <div >
-          <img src={imageUrl} alt="img" />
+          <img src={imageUrl || ""} alt="img" />
         </div>
         <div className="Detail">
           

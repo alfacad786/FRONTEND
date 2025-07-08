@@ -34,17 +34,20 @@
   margin: 0px;
   padding: 0px;
 } */
-/* ================================================================= */
+
+
+
+
 #Card {
   
- width: 200px;
+ width: auto;
  height:200px;
-  /* display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 10px;
-
+  /* padding: .5px; */
   border-radius: 1.5px; 
   box-shadow: 1px 2px 8px rgb(71, 70, 70);
   background-color: rgba(218, 218, 218, 0.932);
@@ -58,49 +61,12 @@
 }
 
 #Card img {
- width: 100%;
+ width: auto;
   height: 100%;
  
- 
+  /* border: 5px solid rgb(77, 77, 77); */
+  /* border-radius: 4.75px; */
 }
-/* ================================================================= */
-
-
-/* .CardWrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
-
-.Card {
-  width: 200px;
-  height: 200px;
-  background-color: white;
-  border-radius: 10px;
-  overflow: hidden;
-  flex-shrink: 0;
-  cursor: pointer;
-  margin: 0;
-}
-
-.Card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #Card p {
   color: rgb(0, 0, 0);

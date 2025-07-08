@@ -1,5 +1,5 @@
 import "../src/css/Page.css";
-// import "./CardList.css";
+
 import { BrowserRouter as Router, Route, Routes,useLocation , Link } from "react-router-dom";
 import Home from "./HomePage";
 import Aboute from "./components/Aboute";

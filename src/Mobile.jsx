@@ -1,6 +1,6 @@
 import "../src/css/Page.css";
 
-import Card from "./Card";
+import Card from "./oldCard";
 import React from "react";
 
 function Mobile() {

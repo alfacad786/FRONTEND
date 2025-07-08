@@ -16,7 +16,7 @@ export default function TitlebarBelowImageList() {
   const HOST_3000 = import.meta.env.VITE_HOST_3000;
  
   useEffect(() => {
-    console.log("bucket name image file", bucket)
+    // console.log("bucket name image file", bucket)
     axios
     
       // .get("http://localhost:3000/api/ListObject/"||`${HOST_3000}/api/ListObject/`, {

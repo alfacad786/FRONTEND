@@ -1,4 +1,4 @@
-import "../src/css/Card.css";
+import "../src/css/oldCard.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -18,33 +18,44 @@ function Card() {
   // temperari close call api ListObject
 
   useEffect(() => {
+    const controller = new AbortController(); // 🔴 Add abort controller
+    console.log("ye link per request gi=" + `${HOST_3000}/api/ListObject/`);
+
     axios
 
-      .get(
-        `${HOST_3000}/api/ListObject/`,
-        {
-          params: { bucketName: bucket },
-        },
-        console.log(`${HOST_3000}/api/ListObject/per request gy`)
-      )
+      .get(`${HOST_3000}/api/ListObject/`, {
+        params: { bucketName: bucket },
+        signal: controller.signal,
+      },console.log (`ye link per request gi=${HOST_3000}/api/ListObject/`))
       .then((response) => {
-        console.log("aws s3=", response.data); // Debugging purpose
+        console.log("aws s3=",response.data); // Debugging purpose
         setObjects(response.data);
-        // console.log("bucket list:", response.data);
+        console.log("bucket list:", response.data);
       })
-      .catch((error) => {
-        console.log(
-          "thar was an error fetching the data",
-          error,
-          error.message,
-          "os"
-        );
-      });
+      // .catch((error) => {
+      //   console.log(
+      //     "thar was an error fetching the data",
+      //     error,
+      //     error.message,
+      //     "os"
+      //   );
+      // });
+      .catch((err) => {
+      if (axios.isCancel(err)) {
+        console.warn("Request cancelled:", err.message);
+      } else {
+        console.error("thar was an error fetching the data", err);
+      }
+    });
+      return () => {
+      controller.abort(); // ✅ Abort old request if component unmounts or re-renders
+    };
   }, []);
-useEffect(() => {
-  console.log("Rendering cards:");
-  console.log("Objects array:", Objects);
-}, [Objects]);
+//   useEffect(() => {
+//   console.log("Rendering cards:");
+//   console.log("Objects array:", Objects);
+// }, [Objects]);
+
   // ++++++++++++++++==========================++++++++++++++++++
 
   // const fetchCardList = async () => {
@@ -107,41 +118,17 @@ useEffect(() => {
   //   }
   // }, [Data, id]);
   // ===========================================================
-  const car =
-    Objects.length > 0 ? (
-      Objects.map((Object) => (
-        <div id="Card" key={Object.Key} onClick={() => goToCardDetail(Object)}>
-          <img src={Object.imageUrl} alt="image" />
-        </div>
-      ))
-    ) : (
-      <p style={{ color: "white" }}>Loading cards...</p>
-    );
+  const car = Objects.map((Object) => (
+    <div id="Card" key={Object.Key} onClick={() => goToCardDetail(Object)}>
+      {/* <p style={{ color: "white" }}>{Object.Key} </p> */}
+      <img src={Object.imageUrl} alt="image" />
+      {/* <p>{Object.projectName}</p> */}
+      {/* <p>{Object.discription}</p> */}
+    </div>
+  ));
+
   // return < >{Items }</>;
   return <>{car}</>;
-  // ================================================================================*****************
-  // return (
-  //   <div >
-  //     {Objects.length > 0 ? (
-  //       Objects.map((obj) => (
-  //         <div key={obj.Key} className="Card" onClick={() => goToCardDetail(obj)}>
-  //           <img src={obj.imageUrl} alt={obj.projectName} />
-  //         </div>
-  //       ))
-  //     ) : (
-  //       <p style={{ color: "white" }}>Loading cards...</p>
-  //     )}
-  //   </div>
-  // );
-  // ================================================================================*****************
-  //  return (<>  {Objects.length > 0 ? (Objects.map((Object) => (
-  //   <div id="Card" key={Object.Key} onClick={() => goToCardDetail(Object)}>
-  //     <img src={Object.imageUrl} alt="image" />
-  //   </div>
-  // ))): (
-  //     <p style={{ color: "white" }}>Loading cards...</p>
-  //   )}
-  // </>)
 }
 
 export default Card;

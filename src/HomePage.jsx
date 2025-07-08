@@ -6,7 +6,7 @@ import Nabar from "./Navbar.jsx";
 import HomeBody from "./HomeBody.jsx";
 import Bottom from "./bottom.jsx";
 import TitlebarBelowImageList from "./image/imageList.jsx";
-import CardList from "./CardList.jsx";
+import CardList from "./oldCardlist.jsx";
 
 function Home() {
   const navigate = useNavigate();

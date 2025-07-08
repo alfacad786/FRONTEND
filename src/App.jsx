@@ -3,7 +3,7 @@ import "../src/css/App.css";
 import Top from "./Top.jsx";
 import Nabar from "./Navbar.jsx";
 import Page from "./page.jsx";
-import CardList from "./CardList.jsx";
+import CardList from "./oldCardlist.jsx";
 import React from "react";
 
 

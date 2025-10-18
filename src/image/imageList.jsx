@@ -9,6 +9,7 @@ import axios from "axios";
 export default function TitlebarBelowImageList() {
   
   const [bucket, setbuckets] = useState("aaliya-1721126150278");
+  const [bucket_Mumbai, setbuckets_Mumbai] = useState("rizwana-1724849048961");
 
   const [Objects, setObjects] = useState([]);
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ export default function TitlebarBelowImageList() {
         
       // }, 
       .get(`${HOST_3000}/api/ListObject/`, {
-        params: { bucketName: bucket },
+        params: { bucketName: bucket_Mumbai },
         
       },
     )
@@ -51,8 +52,8 @@ export default function TitlebarBelowImageList() {
                 loading="lazy"
               />
               <ImageListItemBar
-                title={Object.projectName}
-                subtitle={<span>by: {author}</span>}
+                title={<p id="p">{Object.projectName}</p>}
+                subtitle={<p id="p1">by: {author}</p>}
                 position="below"
               />
             </ImageListItem>

@@ -55,20 +55,20 @@ function Nabar() {
 
   return (
     <div className="navbar">
-      {/* <button onClick={goToHome}>Home</button>     
+      <button onClick={goToHome}>Home</button>     
       <button onClick={goToAboute}>Aboute</button>
      
       <button onClick={goToContect}>Contect</button>
-      <button onClick={goToProduct}>Add Bucket</button>
+      {/* <button onClick={goToProduct}>Add Bucket</button> */}
       <button onClick={goToWeather}>Weather</button>
       <button onClick={goTosingup}>singup</button>
       <button onClick={goTologinup}>loginup</button>
-      <button onClick={goTocreatbucket}>CreatBucket</button> */}
+      <button onClick={goTocreatbucket}>CreatBucket</button>
       {/* <button onClick={goToAdd_Product}>Add_Product</button> */}
-      {/* <button onClick={goToAdd_Object}>Add_3dProject</button>
+      <button onClick={goToAdd_Object}>Add_3dProject</button>
       <button onClick={goToAdd_User}>Add_User</button>
       <button onClick={goToMUI}>MUI</button>
-      <button onClick={goToQUNTITY}>QUNTITY</button> */}
+      <button onClick={goToQUNTITY}>QUNTITY</button>
       <button onClick={goToAdd_Object}>Add_3dProject</button>
       <EXPERIANSE />
         <About />

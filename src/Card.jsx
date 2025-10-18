@@ -11,36 +11,70 @@ function Card() {
   const [Objects, setObjects] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
+    const [loading, setLoading] = useState(true);
 
   // ------------------list from aws s3 bucket-------------
   const [bucket, setbuckets] = useState("aaliya-1721126150278");
   const [bucket_Mumbai, setbuckets_Mumbai] = useState("rizwana-1724849048961");
   // temperari close call api ListObject
 
-  useEffect(() => {
-    axios
+  // useEffect(() => {
+  //   setLoading(true);
+  //   axios
 
-      .get(
-        `${HOST_3000}/api/ListObject/`,
-        {
+  //     .get(
+  //       `${HOST_3000}/api/ListObject/`,
+  //       {
+  //         params: { bucketName: bucket },
+  //         headers: { "Cache-Control": "no-cache" },
+  //       },
+  //       console.log(`${HOST_3000}/api/ListObject/per request gy`)
+  //     )
+  //     .then((response) => {
+  //       console.log("aws s3=", response.data); // Debugging purpose
+  //       setObjects(response.data);
+  //       // console.log("bucket list:", response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(
+  //         "thar was an error fetching the data",
+  //         error,
+  //         error.message,
+  //         "os"
+  //       );
+  //     });
+  // }, [bucket]);
+
+
+
+      // ===========================================
+useEffect(() => {
+    const fetchCards = async () => {
+      console.log("Fetching AWS S3 data for bucket:", bucket);
+
+      try {
+        setLoading(true);
+        const response = await axios.get(`${HOST_3000}/api/ListObject/`, {
           params: { bucketName: bucket },
-        },
-        console.log(`${HOST_3000}/api/ListObject/per request gy`)
-      )
-      .then((response) => {
-        console.log("aws s3=", response.data); // Debugging purpose
+          headers: { "Cache-Control": "no-cache" }, // avoid stale cache
+        });
+
+        console.log("AWS S3 response:", response.data);
         setObjects(response.data);
-        // console.log("bucket list:", response.data);
-      })
-      .catch((error) => {
-        console.log(
-          "thar was an error fetching the data",
-          error,
-          error.message,
-          "os"
-        );
-      });
-  }, []);
+      } catch (error) {
+        console.error("Error fetching card data:", error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCards();
+  }, [location.key]); // <-- re-fetch every time page is revisited
+
+
+// =================================================
+
+
 useEffect(() => {
   console.log("Rendering cards:");
   console.log("Objects array:", Objects);
@@ -62,7 +96,12 @@ useEffect(() => {
   //   fetchCardList();
   // }, []);
   // ++++++++++++++++==========================++++++++++++++++++
+
+
+
   // ------------------read object from aws s3 bucket-------------
+  
+  
   const [id, setid] = useState(null);
   const [Data, setData] = useState([]);
   const goToCardDetail = (Object) => {

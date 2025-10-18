@@ -149,7 +149,7 @@ useEffect(() => {
   const car =
     Objects.length > 0 ? (
       Objects.map((Object) => (
-        <div id="Card" key={Object.Key} onClick={() => goToCardDetail(Object)}>
+        <div className="Card" key={Object.Key} onClick={() => goToCardDetail(Object)}>
           <img src={Object.imageUrl} alt="image" />
         </div>
       ))
